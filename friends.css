@@ -1,0 +1,1015 @@
+/* =========================================================
+   F.R.I.E.N.D.S PAGE
+   Additional styles only
+   Works together with the main style.css
+   ========================================================= */
+
+
+/* =========================================================
+   FRIENDS HERO
+   ========================================================= */
+
+.friends-hero {
+  position: relative;
+
+  min-height: 600px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 5rem 1.5rem;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255, 71, 87, 0.18),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      #29171d 0%,
+      #181a28 55%,
+      #0f111a 100%
+    );
+}
+
+
+/* Decorative circles */
+
+.friends-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -220px;
+  left: -120px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 107, 129, 0.18);
+
+  background: rgba(255, 71, 87, 0.03);
+}
+
+.friends-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -280px;
+  bottom: -320px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 107, 129, 0.12);
+}
+
+
+/* Hero content */
+
+.friends-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 800px;
+
+  animation: friendsFadeIn 1s ease;
+}
+
+
+/* =========================================================
+   HERO LABEL
+   ========================================================= */
+
+.hero-label {
+  display: inline-block;
+
+  margin-bottom: 1.5rem;
+
+  padding: 0.5rem 1.2rem;
+
+  border-radius: 30px;
+
+  background: rgba(255, 71, 87, 0.08);
+
+  border: 1px solid rgba(255, 107, 129, 0.35);
+
+  color: #ff9aaa;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FRIENDS TITLE
+   ========================================================= */
+
+.friends-hero h1 {
+  margin-bottom: 1.2rem;
+
+  color: #ffffff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(3.5rem, 9vw, 6rem);
+
+  line-height: 1;
+
+  letter-spacing: 4px;
+
+  text-shadow:
+    0 0 25px rgba(255, 71, 87, 0.3),
+    0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Subtitle */
+
+.hero-subtitle {
+  margin-bottom: 1rem;
+
+  color: #ff7182;
+
+  font-size: 1.35rem;
+
+  font-weight: 600;
+}
+
+
+/* Description */
+
+.hero-description {
+  max-width: 680px;
+
+  margin: 0 auto 2rem;
+
+  color: #b9b2bb;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+}
+
+
+/* Friends primary button */
+
+.friends-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #ff4757,
+      #e83e52
+    );
+
+  box-shadow:
+    0 6px 20px rgba(255, 71, 87, 0.25);
+}
+
+.friends-btn:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #ff5d6d,
+      #ef4356
+    );
+
+  box-shadow:
+    0 12px 30px rgba(255, 71, 87, 0.35);
+}
+
+
+/* Secondary button */
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid #51414a;
+
+  color: #d9d4da;
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+   ========================================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 1.5rem;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0.3rem;
+
+  color: #777381;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 1px;
+}
+
+.scroll-arrow {
+  color: #ff6b81;
+
+  font-size: 1.2rem;
+
+  animation: friendsScroll 1.5s infinite;
+}
+
+
+/* =========================================================
+   QUICK INFORMATION
+   ========================================================= */
+
+.friends-intro {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 1rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.intro-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1.2rem;
+
+  background: #191c2b;
+
+  border: 1px solid #2d3043;
+
+  border-radius: 12px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.intro-item:hover {
+  transform: translateY(-5px);
+
+  border-color: #713d48;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.intro-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 71, 87, 0.1);
+
+  font-size: 1.4rem;
+}
+
+.intro-item strong {
+  display: block;
+
+  color: #eeeeef;
+
+  font-size: 0.95rem;
+}
+
+.intro-item p {
+  margin: 0;
+
+  color: #777b91;
+
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   FRIENDS SECTION HEADINGS
+   ========================================================= */
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.section-number {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 71, 87, 0.1);
+
+  border:
+    1px solid rgba(255, 107, 129, 0.25);
+
+  color: #ff6b81;
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+}
+
+.section-label {
+  margin-bottom: 0.1rem;
+
+  color: #94616b;
+
+  font-size: 0.65rem;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+/* Keep Friends section headings pink */
+
+.friends-theme .section-heading h2 {
+  color: #ff6b81;
+}
+
+
+/* =========================================================
+   PLOT SECTION
+   ========================================================= */
+
+.plot-layout {
+  display: grid;
+
+  grid-template-columns:
+    1.6fr 0.8fr;
+
+  gap: 2rem;
+
+  align-items: stretch;
+}
+
+.plot-main p {
+  margin-bottom: 1rem;
+}
+
+
+/* Quote */
+
+.quote-box {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 71, 87, 0.1),
+      rgba(255, 193, 7, 0.03)
+    );
+
+  border: 1px solid #4b3038;
+}
+
+.quote-mark {
+  color: #ff4757;
+
+  font-family: Georgia, serif;
+
+  font-size: 4rem;
+
+  line-height: 0.6;
+}
+
+.quote-box p {
+  margin: 1rem 0;
+
+  color: #d3cbd0;
+
+  font-size: 1.05rem;
+
+  font-style: italic;
+
+  line-height: 1.7;
+}
+
+.quote-dots {
+  color: #ff6b81;
+
+  letter-spacing: 5px;
+}
+
+
+/* =========================================================
+   CHARACTER SECTION
+   ========================================================= */
+
+.section-description {
+  margin-bottom: 1rem;
+
+  color: #8f93a8;
+}
+
+
+/* Character grid */
+
+.character-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 1.3rem;
+
+  margin-top: 2rem;
+}
+
+
+/* Character card */
+
+.character-card {
+  overflow: hidden;
+
+  background: #202334;
+
+  border:
+    1px solid #303448;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #713d48;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 71, 87, 0.08);
+}
+
+
+/* Character image */
+
+.character-image {
+  position: relative;
+
+  height: 260px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b222a,
+      #24283a
+    );
+}
+
+.character-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.character-card:hover .character-image img {
+  transform: scale(1.07);
+
+  filter: brightness(1.05);
+}
+
+
+/* Image gradient */
+
+.character-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 50%,
+      rgba(15, 17, 26, 0.8)
+    );
+}
+
+
+/* Character number */
+
+.character-number {
+  position: absolute;
+
+  top: 0.8rem;
+  right: 0.8rem;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(15, 17, 26, 0.75);
+
+  color: #ff8998;
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  border:
+    1px solid rgba(255, 107, 129, 0.3);
+}
+
+
+/* Character information */
+
+.character-info {
+  padding: 1.3rem;
+}
+
+.character-info h3 {
+  margin-bottom: 0.25rem;
+
+  color: #ff6b81;
+
+  font-size: 1.2rem;
+}
+
+.character-role {
+  display: block;
+
+  margin-bottom: 0.8rem;
+
+  color: #8e91a6;
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+}
+
+.character-info p {
+  color: #aeb2c4;
+
+  font-size: 0.87rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   MEDIA SECTION
+   ========================================================= */
+
+.media-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 1.3rem;
+
+  margin-top: 2rem;
+}
+
+
+/* Media cards */
+
+.media-card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 280px;
+
+  background: #202334;
+
+  border:
+    1px solid #303448;
+
+  border-radius: 12px;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #713d48;
+}
+
+
+/* Images */
+
+.media-card img {
+  display: block;
+
+  width: 100%;
+  height: 280px;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.5s ease;
+}
+
+.media-card:hover img {
+  transform: scale(1.06);
+
+  filter: brightness(0.7);
+}
+
+
+/* Large media */
+
+.large-media {
+  grid-column: span 2;
+}
+
+.large-media img {
+  height: 360px;
+}
+
+
+/* Media overlay */
+
+.media-overlay {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 2rem;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(10, 11, 18, 0.95)
+    );
+}
+
+.media-overlay span,
+.media-caption span {
+  color: #ff7d8c;
+
+  font-size: 0.6rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.media-overlay h3 {
+  margin-top: 0.4rem;
+
+  color: #ffffff;
+
+  font-size: 1.6rem;
+}
+
+.media-overlay p {
+  color: #bbb7bf;
+
+  font-size: 0.9rem;
+}
+
+
+/* Media captions */
+
+.media-caption {
+  padding: 1.2rem;
+}
+
+.media-caption h3 {
+  margin: 0.3rem 0;
+
+  color: #ff6b81;
+
+  font-size: 1.1rem;
+}
+
+.media-caption p {
+  color: #999dae;
+
+  font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   ENDING SECTION
+   ========================================================= */
+
+.friends-ending {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 4rem 1.5rem;
+
+  text-align: center;
+
+  border-radius: 14px;
+
+  border: 1px solid #302932;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 71, 87, 0.12),
+      transparent 60%
+    );
+}
+
+.coffee-icon {
+  margin-bottom: 1rem;
+
+  font-size: 2.5rem;
+
+  animation:
+    friendsCoffeeFloat 3s ease-in-out infinite;
+}
+
+.friends-ending h2 {
+  margin-bottom: 0.8rem;
+
+  color: #f0e9ed;
+
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.friends-ending p {
+  max-width: 550px;
+
+  margin: 0 auto 1.5rem;
+
+  color: #8e92a5;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes friendsFadeIn {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes friendsScroll {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+
+}
+
+
+@keyframes friendsCoffeeFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .character-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .plot-layout {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .friends-hero {
+    min-height: 550px;
+
+    padding: 5rem 1.5rem 4rem;
+  }
+
+
+  .friends-intro {
+    grid-template-columns: 1fr;
+  }
+
+
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .large-media {
+    grid-column: span 1;
+  }
+
+
+  .large-media img {
+    height: 280px;
+  }
+
+
+  .character-image {
+    height: 300px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .friends-hero h1 {
+    font-size: 3rem;
+
+    letter-spacing: 2px;
+  }
+
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+
+  .hero-buttons .btn {
+    width: 100%;
+
+    max-width: 260px;
+  }
+
+
+  .card-section {
+    padding: 1.5rem;
+  }
+
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+
+  .quote-box {
+    padding: 1.5rem;
+  }
+
+}
