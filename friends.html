@@ -3,583 +3,321 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>F.R.I.E.N.D.S | FANDEMIC</title>
-
-   <link rel="stylesheet" href="style.css">
+  <title>F.R.I.E.N.D.S | Central Perk Fan Haven</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,700;1,900&family=Playfair+Display:ital,wght@0,600;0,800;1,700&display=swap" rel="stylesheet">
+  <!-- External CSS -->
   <link rel="stylesheet" href="friends.css">
 </head>
-
 <body>
 
   <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Fandemic</a></div>
-    <ul class="nav-links">
-      <li><a href="hxh.html">Hunter × Hunter</a></li>
-      <li><a href="friends.html">F.R.I.E.N.D.S</a></li>
-      <li><a href="sonic.html">Sonic</a></li>
-      <li><a href="alnst.html">Alien Stage</a></li>
+  <nav class="fr-nav">
+    <a href="#hero" class="fr-logo">
+      FANDEMIC <span class="fr-dots"><span class="fr-dot-red">•</span><span class="fr-dot-yellow">•</span><span class="fr-dot-blue">•</span></span>
+    </a>
+    <ul class="fr-nav-links">
+      <li><a href="index.html" class="fr-nav-link">Home</a></li>
+      <li><a href="hxh.html" class="fr-nav-link">Hunter x Hunter</a></li>
+      <li><a href="friends.html" class="fr-nav-link">F.R.I.E.N.D.S</a></li>
+      <li><a href="sonic.html" class="fr-nav-link">Sonic</a></li>
+      <li><a href="alnst.html" class="fr-nav-link">Alien Stage</a></li>
     </ul>
   </nav>
 
-
   <!-- Hero Section -->
-  <header class="friends-hero">
-
-    <div class="friends-hero-content">
-
-      <div class="hero-label">
-        ☕ Welcome to Central Perk
-      </div>
-
-      <h1>F.R.I.E.N.D.S</h1>
-
-      <p class="hero-subtitle">
-        Six friends. One city. A million unforgettable moments.
+  <header id="hero" class="fr-hero">
+    <div class="fr-hero-content">
+      <span class="fr-badge">☕ Welcome to Central Perk</span>
+      <h1 class="fr-hero-title">F<span class="fr-dot-red">•</span>R<span class="fr-dot-yellow">•</span>I<span class="fr-dot-blue">•</span>E<span class="fr-dot-red">•</span>N<span class="fr-dot-yellow">•</span>D<span class="fr-dot-blue">•</span>S</h1>
+      <p class="fr-hero-subtitle">Six friends. One couch. A decade of unforgettable laughter.</p>
+      <p class="fr-hero-desc">
+        Step into Manhattan's most famous coffee shop. Experience the story, iconic moments, and everlasting bond of Rachel, Monica, Phoebe, Joey, Chandler, and Ross.
       </p>
-
-      <p class="hero-description">
-        Step into the world of Rachel, Monica, Phoebe, Joey,
-        Chandler, and Ross — where friendship, laughter,
-        love, and coffee are always on the menu.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="#plot" class="btn friends-btn">
-          Explore the Story
-        </a>
-
-        <a href="#characters" class="btn secondary-btn">
-          Meet the Friends
-        </a>
-
+      <div class="fr-btn-group">
+        <a href="#characters" class="fr-btn fr-btn-primary">Meet The Friends</a>
+        <a href="#trivia" class="fr-btn fr-btn-secondary">Take The Quiz</a>
       </div>
-
     </div>
-
-    <div class="scroll-indicator">
-      <span>Scroll to explore</span>
-      <span class="scroll-arrow">↓</span>
-    </div>
-
   </header>
 
+  <main class="fr-container">
 
-  <main class="container">
-
-
-    <!-- Quick Information -->
-    <section class="friends-intro">
-
-      <div class="intro-item">
-
-        <div class="intro-icon">☕</div>
-
-        <div>
-          <strong>Central Perk</strong>
-          <p>Their favorite hangout</p>
-        </div>
-
+    <!-- About / Quick Info -->
+    <section id="about" class="fr-section">
+      <div class="fr-section-header">
+        <span class="fr-section-tag">The Story</span>
+        <h2 class="fr-section-title">Life, Love & Coffee</h2>
       </div>
-
-
-      <div class="intro-item">
-
-        <div class="intro-icon">🏙️</div>
-
-        <div>
-          <strong>New York City</strong>
-          <p>Where their story unfolds</p>
-        </div>
-
-      </div>
-
-
-      <div class="intro-item">
-
-        <div class="intro-icon">❤️</div>
-
-        <div>
-          <strong>Friendship</strong>
-          <p>The heart of the series</p>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Plot -->
-    <section id="plot" class="card-section friends-theme">
-
-      <div class="section-heading">
-
-        <div class="section-number">
-          01
-        </div>
-
-        <div>
-          <div class="section-label">
-            THE STORY
-          </div>
-
-          <h2>Summary of the Plot</h2>
-        </div>
-
-      </div>
-
-
-      <div class="plot-layout">
-
-        <div class="plot-main">
-
-          <p class="tagline">
-            "I'll be there for you..."
-          </p>
-
-          <p>
-            F.R.I.E.N.D.S follows the lives of six close friends
-            living in New York City: Rachel Green, Monica Geller,
-            Phoebe Buffay, Joey Tribbiani, Chandler Bing, and
-            Ross Geller.
-          </p>
-
-          <p>
-            Throughout the series, the group experiences the
-            ups and downs of adulthood, including relationships,
-            careers, family, friendship, and everyday life.
-          </p>
-
-          <p>
-            Whether they are spending time at Central Perk,
-            hanging out at Monica's apartment, celebrating
-            important milestones, or getting themselves into
-            ridiculous situations, the six friends remain at
-            the center of one another's lives.
-          </p>
-
-
-          <div class="tags">
-
-            <span>Sitcom</span>
-            <span>Comedy</span>
-            <span>Friendship</span>
-            <span>Romance</span>
-
-          </div>
-
-        </div>
-
-
-        <div class="quote-box">
-
-          <div class="quote-mark">“</div>
-
-          <p>
-            Sometimes the best thing in life is simply
-            having the right people beside you.
-          </p>
-
-          <div class="quote-dots">
-            • • •
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- Characters -->
-    <section id="characters" class="card-section friends-theme">
-
-      <div class="section-heading">
-
-        <div class="section-number">
-          02
-        </div>
-
-        <div>
-          <div class="section-label">
-            THE GANG
-          </div>
-
-          <h2>Meet the Friends</h2>
-        </div>
-
-      </div>
-
-
-      <p class="section-description">
-        Six completely different personalities.
-        One unforgettable friendship.
-      </p>
-
-
-      <div class="character-grid">
-
-
-        <!-- Rachel -->
-        <article class="character-card">
-
-          <div class="character-image">
-
-            <img src="friends photos/Rachel Green.jpg" alt="Rachel Green">
-
-            <span class="character-number">
-              01
-            </span>
-
-          </div>
-
-          <div class="character-info">
-
-            <h3>Rachel Green</h3>
-
-            <span class="character-role">
-              Fashion • Independent • Ambitious
-            </span>
-
-            <p>
-              Rachel begins a new independent life in New York
-              and gradually builds a successful career while
-              navigating friendship, love, and adulthood.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Monica -->
-        <article class="character-card">
-
-          <div class="character-image">
-
-            <img src="friends photos/Monica Geller.jpg" alt="Monica Geller">
-
-            <span class="character-number">
-              02
-            </span>
-
-          </div>
-
-          <div class="character-info">
-
-            <h3>Monica Geller</h3>
-
-            <span class="character-role">
-              Chef • Competitive • Organized
-            </span>
-
-            <p>
-              Monica is Ross's younger sister and the group's
-              famously organized chef. Her apartment becomes
-              one of the main gathering places for the friends.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Phoebe -->
-        <article class="character-card">
-
-          <div class="character-image">
-
-            <img src="friends photos/Phoebe Buffay.jpg" alt="Phoebe Buffay">
-
-            <span class="character-number">
-              03
-            </span>
-
-          </div>
-
-          <div class="character-info">
-
-            <h3>Phoebe Buffay</h3>
-
-            <span class="character-role">
-              Musician • Free-Spirited • Unique
-            </span>
-
-            <p>
-              Phoebe is the eccentric musician of the group.
-              Her unusual perspective and unpredictable
-              personality make her one of the most memorable
-              members of the gang.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Joey -->
-        <article class="character-card">
-
-          <div class="character-image">
-
-            <img src="friends photos/Joey Tribbiani.jpg" alt="Joey Tribbiani">
-
-            <span class="character-number">
-              04
-            </span>
-
-          </div>
-
-          <div class="character-info">
-
-            <h3>Joey Tribbiani</h3>
-
-            <span class="character-role">
-              Actor • Food Lover • Loyal
-            </span>
-
-            <p>
-              Joey is an aspiring actor with a big heart,
-              an enormous appetite, and a memorable sense
-              of humor. His friendship with Chandler is
-              one of the show's defining relationships.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Chandler -->
-        <article class="character-card">
-
-          <div class="character-image">
-
-            <img src="friends photos/Chandler Bing.jpg" alt="Chandler Bing">
-
-            <span class="character-number">
-              05
-            </span>
-
-          </div>
-
-          <div class="character-info">
-
-            <h3>Chandler Bing</h3>
-
-            <span class="character-role">
-              Sarcastic • Witty • Caring
-            </span>
-
-            <p>
-              Chandler is known for his sarcastic humor
-              and quick one-liners. Beneath the jokes,
-              he is a caring friend who values the people
-              closest to him.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Ross -->
-        <article class="character-card">
-
-          <div class="character-image">
-
-            <img src="friends photos/Ross Geller.jpg" alt="Ross Geller">
-
-            <span class="character-number">
-              06
-            </span>
-
-          </div>
-
-          <div class="character-info">
-
-            <h3>Ross Geller</h3>
-
-            <span class="character-role">
-              Paleontologist • Intelligent • Awkward
-            </span>
-
-            <p>
-              Ross is Monica's older brother and a passionate
-              paleontologist. His relationships, interests,
-              and personality provide many memorable moments
-              throughout the series.
-            </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- Media -->
-    <section id="media" class="card-section friends-theme">
-
-      <div class="section-heading">
-
-        <div class="section-number">
-          03
-        </div>
-
-        <div>
-          <div class="section-label">
-            FAN ZONE
-          </div>
-
-          <h2>Media & Memories</h2>
-        </div>
-
-      </div>
-
-
-      <p class="section-description">
-        Screenshots, fan work, and moments worth remembering.
-      </p>
-
-
-      <div class="media-grid">
-
-
-        <!-- Large Image -->
-        <article class="media-card large-media">
-
-          <img
-            src="friends photos/friends.jpg"
-            alt="The six friends"
-          >
-
-          <div class="media-overlay">
-
-            <span>ICONIC MOMENT</span>
-
-            <h3>The Six Friends</h3>
-
-            <p>
-              Six people who turned friendship into family.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Central Perk -->
-        <article class="media-card">
-
-          <img
-            src="friends photos/central perk.jpg"
-            alt="Central Perk"
-          >
-
-          <div class="media-caption">
-
-            <span>LOCATION</span>
-
+      <div class="fr-intro-grid">
+        <div class="fr-intro-card">
+          <div class="fr-intro-icon">☕</div>
+          <div>
             <h3>Central Perk</h3>
-
-            <p>
-              The unofficial headquarters of the group.
-            </p>
-
+            <p>The iconic green couch where countless cups of coffee and life-changing conversations were shared.</p>
           </div>
-
-        </article>
-
-
-        <!-- Fan Art -->
-        <article class="media-card">
-
-          <img
-            src="friends photos/fanart.jpg"
-            alt="F.R.I.E.N.D.S fan artwork"
-          >
-
-          <div class="media-caption">
-
-            <span>FAN WORK</span>
-
-            <h3>Fan Art</h3>
-
-            <p>
-              Celebrating the series through creativity.
-            </p>
-
+        </div>
+        <div class="fr-intro-card">
+          <div class="fr-intro-icon">🏙️</div>
+          <div>
+            <h3>Greenwich Village</h3>
+            <p>Monica's purple apartment with the yellow frame was the ultimate haven in New York City.</p>
           </div>
-
-        </article>
-
-
-        <!-- Memorable Moment -->
-        <article class="media-card">
-
-          <img
-            src="friends photos/pivot.jpg"
-            alt="Memorable F.R.I.E.N.D.S moment"
-          >
-
-          <div class="media-caption">
-
-            <span>MEMORIES</span>
-
-            <h3>Unforgettable Moments</h3>
-
-            <p>
-              Moments that fans still remember.
-            </p>
-
+        </div>
+        <div class="fr-intro-card">
+          <div class="fr-intro-icon">❤️</div>
+          <div>
+            <h3>Unbreakable Bond</h3>
+            <p>Through career changes, broken hearts, and hilarious mishaps, they proved family is who you choose.</p>
           </div>
-
-        </article>
-
+        </div>
       </div>
-
     </section>
 
-
-    <!-- Ending -->
-    <section class="friends-ending">
-
-      <div class="coffee-icon">
-        ☕
+    <!-- Character Carousel Section -->
+    <section id="characters" class="fr-section">
+      <div class="fr-section-header">
+        <span class="fr-section-tag">Interactive Roster</span>
+        <h2 class="fr-section-title">Meet The Gang</h2>
       </div>
 
-      <h2>
-        Could this page BE any more F.R.I.E.N.D.S?
-      </h2>
+      <div class="fr-carousel-wrapper">
+        <button class="fr-carousel-btn fr-prev-btn" id="prevBtn" aria-label="Previous Slide">&#10094;</button>
+        <button class="fr-carousel-btn fr-next-btn" id="nextBtn" aria-label="Next Slide">&#10095;</button>
 
-      <p>
-        Grab a coffee, sit back, and enjoy the memories.
-      </p>
+        <div class="fr-carousel-container">
+          <div class="fr-carousel-track" id="carouselTrack">
 
-      <a href="index.html" class="btn friends-btn">
-        ← Back to Fandemic
-      </a>
+            <!-- Slide 1: Rachel -->
+            <div class="fr-carousel-slide">
+              <div class="fr-character-card">
+                <div class="fr-char-media">
+                  <span class="fr-char-badge">#01 • Fashion Icon</span>
+                  <img src="friends photos/Rachel Green.jpg" alt="Rachel Green" class="fr-char-img">
+                </div>
+                <div class="fr-char-details">
+                  <h3 class="fr-char-name">Rachel Green</h3>
+                  <span class="fr-char-actor">Portrayed by Jennifer Aniston</span>
+                  <div class="fr-char-traits">
+                    <span class="fr-trait-tag">Ambitious</span>
+                    <span class="fr-trait-tag">Stylish</span>
+                    <span class="fr-trait-tag">Independent</span>
+                  </div>
+                  <p class="fr-char-bio">
+                    From runaway bride cutting up credit cards to executive at Ralph Lauren, Rachel's journey is an inspiring story of self-discovery and independence.
+                  </p>
+                  <div class="fr-char-quote-box">
+                    "Ah, humor based on my pain. Ah, good one."
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <!-- Slide 2: Monica -->
+            <div class="fr-carousel-slide">
+              <div class="fr-character-card">
+                <div class="fr-char-media">
+                  <span class="fr-char-badge">#02 • Master Chef</span>
+                  <img src="friends photos/Monica Geller.jpg" alt="Monica Geller" class="fr-char-img">
+                </div>
+                <div class="fr-char-details">
+                  <h3 class="fr-char-name">Monica Geller</h3>
+                  <span class="fr-char-actor">Portrayed by Courteney Cox</span>
+                  <div class="fr-char-traits">
+                    <span class="fr-trait-tag">Competitive</span>
+                    <span class="fr-trait-tag">Organized</span>
+                    <span class="fr-trait-tag">Nurturing</span>
+                  </div>
+                  <p class="fr-char-bio">
+                    The glue that holds the group together. Monica is an exceptionally talented chef whose passion for perfection, cleanliness, and hosting keeps everyone fed and together.
+                  </p>
+                  <div class="fr-char-quote-box">
+                    "I KNOW!"
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Phoebe -->
+            <div class="fr-carousel-slide">
+              <div class="fr-character-card">
+                <div class="fr-char-media">
+                  <span class="fr-char-badge">#03 • Free Spirit</span>
+                  <img src="friends photos/Phoebe Buffay.jpg" alt="Phoebe Buffay" class="fr-char-img">
+                </div>
+                <div class="fr-char-details">
+                  <h3 class="fr-char-name">Phoebe Buffay</h3>
+                  <span class="fr-char-actor">Portrayed by Lisa Kudrow</span>
+                  <div class="fr-char-traits">
+                    <span class="fr-trait-tag">Eccentric</span>
+                    <span class="fr-trait-tag">Musician</span>
+                    <span class="fr-trait-tag">Loyal</span>
+                  </div>
+                  <p class="fr-char-bio">
+                    A quirkily optimistic musician and masseuse with a colorful past. Singer of "Smelly Cat", Phoebe brings uninhibited joy and eccentric logic to the gang.
+                  </p>
+                  <div class="fr-char-quote-box">
+                    "They don't know that we know they know we know."
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Joey -->
+            <div class="fr-carousel-slide">
+              <div class="fr-character-card">
+                <div class="fr-char-media">
+                  <span class="fr-char-badge">#04 • Actor</span>
+                  <img src="friends photos/Joey Tribbiani.jpg" alt="Joey Tribbiani" class="fr-char-img">
+                </div>
+                <div class="fr-char-details">
+                  <h3 class="fr-char-name">Joey Tribbiani</h3>
+                  <span class="fr-char-actor">Portrayed by Matt LeBlanc</span>
+                  <div class="fr-char-traits">
+                    <span class="fr-trait-tag">Charismatic</span>
+                    <span class="fr-trait-tag">Foodie</span>
+                    <span class="fr-trait-tag">Big Heart</span>
+                  </div>
+                  <p class="fr-char-bio">
+                    A good-natured actor best known for playing Dr. Drake Ramoray on Days of Our Lives. Joey loves food, women, and his friends above all else.
+                  </p>
+                  <div class="fr-char-quote-box">
+                    "How you doin'?"
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5: Chandler -->
+            <div class="fr-carousel-slide">
+              <div class="fr-character-card">
+                <div class="fr-char-media">
+                  <span class="fr-char-badge">#05 • Sarcasm King</span>
+                  <img src="friends photos/Chandler Bing.jpg" alt="Chandler Bing" class="fr-char-img">
+                </div>
+                <div class="fr-char-details">
+                  <h3 class="fr-char-name">Chandler Bing</h3>
+                  <span class="fr-char-actor">Portrayed by Matthew Perry</span>
+                  <div class="fr-char-traits">
+                    <span class="fr-trait-tag">Sarcastic</span>
+                    <span class="fr-trait-tag">Witty</span>
+                    <span class="fr-trait-tag">Devoted</span>
+                  </div>
+                  <p class="fr-char-bio">
+                    Master of defense mechanisms and quick wit. Chandler navigates career re-invention and commitment fears to become the ultimate loving partner to Monica.
+                  </p>
+                  <div class="fr-char-quote-box">
+                    "Could this BE any more iconic?"
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6: Ross -->
+            <div class="fr-carousel-slide">
+              <div class="fr-character-card">
+                <div class="fr-char-media">
+                  <span class="fr-char-badge">#06 • Paleontologist</span>
+                  <img src="friends photos/Ross Geller.jpg" alt="Ross Geller" class="fr-char-img">
+                </div>
+                <div class="fr-char-details">
+                  <h3 class="fr-char-name">Ross Geller</h3>
+                  <span class="fr-char-actor">Portrayed by David Schwimmer</span>
+                  <div class="fr-char-traits">
+                    <span class="fr-trait-tag">Intellectual</span>
+                    <span class="fr-trait-tag">Hopeless Romantic</span>
+                    <span class="fr-trait-tag">Dinosaur Fan</span>
+                  </div>
+                  <p class="fr-char-bio">
+                    Monica's older brother and a passionate paleontologist. Ross's turbulent romance with Rachel forms the emotional core of the series' overarching story.
+                  </p>
+                  <div class="fr-char-quote-box">
+                    "WE WERE ON A BREAK!"
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="fr-dots-container" id="dotsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Quote Generator -->
+    <section id="quotes" class="fr-section">
+      <div class="fr-section-header">
+        <span class="fr-section-tag">Central Perk Generator</span>
+        <h2 class="fr-section-title">Iconic One-Liners</h2>
+      </div>
+
+      <div class="fr-quote-generator">
+        <div class="fr-quote-text" id="quoteText">"Welcome to the real world. It sucks. You're gonna love it!"</div>
+        <div class="fr-quote-author" id="quoteAuthor">— Monica Geller</div>
+        <button class="fr-btn fr-btn-primary" id="quoteBtn">Generate Another Quote</button>
+      </div>
+    </section>
+
+    <!-- Trivia Quiz -->
+    <section id="trivia" class="fr-section">
+      <div class="fr-section-header">
+        <span class="fr-section-tag">Fan Verification</span>
+        <h2 class="fr-section-title">Central Perk Trivia</h2>
+      </div>
+
+      <div class="fr-quiz-card">
+        <div class="fr-quiz-question" id="quizQuestion">Loading Trivia Question...</div>
+        <div class="fr-quiz-options" id="quizOptions"></div>
+        <div class="fr-quiz-feedback" id="quizFeedback"></div>
+        <button class="fr-btn fr-btn-secondary" id="nextQuizBtn" style="margin-top: 15px; display: none;">Next Question</button>
+      </div>
+    </section>
+
+    <!-- Media Gallery -->
+    <section id="gallery" class="fr-section">
+      <div class="fr-section-header">
+        <span class="fr-section-tag">Memories</span>
+        <h2 class="fr-section-title">Central Perk Gallery</h2>
+      </div>
+
+      <div class="fr-media-grid">
+        <div class="fr-media-card">
+          <img src="friends photos/friends-centralperk.jfif" alt="Coffee Cup">
+          <div class="fr-media-overlay">
+            <span>Location</span>
+            <h4>Central Perk Corner</h4>
+          </div>
+        </div>
+        <div class="fr-media-card">
+          <img src="friends photos/friends-apartment.jfif" alt="New York Apartment">
+          <div class="fr-media-overlay">
+            <span>Setting</span>
+            <h4>Greenwich Village</h4>
+          </div>
+        </div>
+        <div class="fr-media-card">
+          <img src="friends photos/central perk.jpg" alt="Cafe Couch">
+          <div class="fr-media-overlay">
+            <span>The Couch</span>
+            <h4>Reserved Stage Spot</h4>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
 
-
-  <!-- Footer -->
-  <footer>
-
-    <p>
-      &copy; 2026 Fandemic |
-      Created for fans of Hunter × Hunter,
-      F.R.I.E.N.D.S, Sonic, and Honkai: Star Rail.
-    </p>
-
+  <footer class="fr-footer">
+    <div class="fr-footer-logo">
+     Could this page BE any more F<span class="fr-dot-red">•</span>R<span class="fr-dot-yellow">•</span>I<span class="fr-dot-blue">•</span>E<span class="fr-dot-red">•</span>N<span class="fr-dot-yellow">•</span>D<span class="fr-dot-blue">•</span>S?
+    </div>
+    <p class="fr-footer-text">&copy; 2026 Fandemic Hub | Crafted with love for fans of Central Perk</p>
   </footer>
 
+  <!-- External JS -->
+  <script src="friends.js"></script>
 </body>
 </html>
