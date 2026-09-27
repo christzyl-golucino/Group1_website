@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hunter × Hunter | Fandemic</title>
-  <!-- Link to dedicated Hunter x Hunter CSS -->
+  <title>Hunter × Hunter | Fandemic Universe</title>
   <link rel="stylesheet" href="hxh.css">
 </head>
 <body class="hxh-page">
@@ -12,7 +11,7 @@
   <!-- Navigation Bar -->
   <nav class="hxh-nav">
     <div class="hxh-logo">
-      <a href="index.html">Fandemic <span class="hxh-badge-tag">HxH</span></a>
+      <a href="index.html">Fandemic <span class="hxh-badge-tag">HUNTER</span></a>
     </div>
     <ul class="hxh-nav-links">
       <li><a href="index.html">Home</a></li>
@@ -23,13 +22,16 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Anime-Inspired Hero Section -->
   <header class="hxh-hero">
+    <div class="hxh-hero-overlay"></div>
     <div class="hxh-hero-inner">
-      <span class="hxh-official-tag">HUNTER ASSOCIATION OFFICIAL ARCHIVE</span>
       <h1>HUNTER <span class="hxh-x">×</span> HUNTER</h1>
-      <p>Monster Hunters. Treasure Hunters. Blacklist Hunters. Step into a world of limitless potential and deadly aura.</p>
-      <a href="#summary" class="hxh-btn">Discover the World</a>
+      <p class="hxh-hero-sub">"You should enjoy the little detours to the fullest. Because that's where you'll find the things more important than what you want."</p>
+      <div class="hxh-hero-actions">
+        <a href="#summary" class="hxh-btn primary">Enter the Exam</a>
+        <a href="#characters" class="hxh-btn secondary">View Hunters</a>
+      </div>
     </div>
   </header>
 
@@ -38,96 +40,305 @@
     <!-- Summary Section -->
     <section id="summary" class="hxh-card">
       <div class="hxh-card-header">
-        <h2>Summary of the Plot</h2>
-        <p class="hxh-tagline">"If you want to know the person, find out what makes them angry."</p>
+        <p class="hxh-section-label">THE WORLD OF NEN</p>
+        <h2>SUMMARY OF THE PLOT</h2>
       </div>
       <div class="hxh-card-body">
-        <p>The story focuses on a young boy named <strong>Gon Freecss</strong>, who discovers that his father—who he was told had passed away—is actually alive and a world-renowned Hunter. Hunters are licensed professionals who specialize in locating rare animal species, treasure hunting, surveying unexplored territory, or tracking down lawless individuals.</p>
-        <p>Determined to follow in his father's footsteps, Gon leaves his home on Whale Island to take the notoriously difficult Hunter Examination. Along the way, he meets and befriends three fellow applicants: Killua Zoldyck, Kurapika, and Leorio. Together, they embark on dangerous adventures and uncover the power of <strong>Nen</strong>—a technique that allows a living being to manipulate their own life energy (aura).</p>
+        <p>The story follows <strong>Gon Freecss</strong>, a young boy who discovers that his father Ging—who he believed to be dead—is alive and renowned as one of the greatest Hunters in the world. Hunters are elite individuals licensed to track down secret treasures, rare beasts, and dangerous fugitives.</p>
+        <p>Driven to understand why his father chose his career over him, Gon leaves Whale Island to take the deadly <strong>Hunter Examination</strong>. Along his journey, he forms unbreakable bonds with Killua, Kurapika, and Leorio as they unlock <strong>Nen</strong>—the supernatural ability to manipulate one's own life energy.</p>
       </div>
     </section>
 
-    <!-- Main Characters Section -->
-    <section id="characters" class="hxh-card">
-      <div class="hxh-card-header">
-        <h2>Main Characters</h2>
-        <p class="hxh-tagline">The Hunters and their unique Nen categories</p>
+    <!-- Main Characters Data Sheet Carousel Section -->
+    <section id="characters" style="margin-bottom: 60px;">
+      <div class="hxh-section-heading">
+        <p class="hxh-section-label">NEN USER ARCHIVE</p>
+        <h2>CHARACTER <span>FILES</span></h2>
       </div>
-      
-      <div class="hxh-char-grid">
+
+      <!-- Carousel Container Wrapper -->
+      <div class="hxh-carousel-wrapper">
         
-        <!-- Gon -->
-        <article class="hxh-char-card enhancer">
-          <div class="hxh-char-img-wrapper">
-            <img src="hxh pictures/Gon.png" alt="Gon Freecss">
-          </div>
-          <h3>Gon Freecss</h3>
-          <span class="hxh-nen-type">Enhancer</span>
-          <p>An athletic, naive, and friendly boy determined to become a great Hunter to understand why his father chose the profession over raising him.</p>
-        </article>
+        <!-- Navigation Buttons -->
+        <button class="hxh-carousel-btn prev-btn" id="prevBtn" aria-label="Previous Profile">&lt;</button>
+        <button class="hxh-carousel-btn next-btn" id="nextBtn" aria-label="Next Profile">&gt;</button>
 
-        <!-- Killua -->
-        <article class="hxh-char-card transmuter">
-          <div class="hxh-char-img-wrapper">
-            <img src="hxh pictures/Killua.png" alt="Killua Zoldyck">
-          </div>
-          <h3>Killua Zoldyck</h3>
-          <span class="hxh-nen-type">Transmuter</span>
-          <p>A prodigy from the infamous Zoldyck family of elite assassins. He befriends Gon during the Hunter Exam to escape his family's deadly legacy.</p>
-        </article>
+        <!-- Track Container -->
+        <div class="hxh-carousel-track-container">
+          <div class="hxh-carousel-track" id="carouselTrack">
 
-        <!-- Kurapika -->
-        <article class="hxh-char-card specialist">
-          <div class="hxh-char-img-wrapper">
-            <img src="hxh pictures/Kurapika.png" alt="Kurapika">
-          </div>
-          <h3>Kurapika</h3>
-          <span class="hxh-nen-type">Conjurer / Specialist</span>
-          <p>The sole survivor of the Kurta Clan. He seeks to become a Blacklist Hunter to avenge his slaughtered clan and retrieve their stolen Scarlet Eyes.</p>
-        </article>
+            <!-- Card 1: Gon -->
+            <div class="hxh-carousel-slide">
+              <div class="hxh-profile-card">
+                <div class="hxh-profile-details">
+                  <div class="hxh-profile-title">
+                    <span class="hxh-jp-title">ゴン＝フリークス</span>
+                    <h3>GON FREECSS</h3>
+                  </div>
 
-        <!-- Leorio -->
-        <article class="hxh-char-card emitter">
-          <div class="hxh-char-img-wrapper">
-            <img src="hxh pictures/Leorio.png" alt="Leorio Paradinight">
-          </div>
-          <h3>Leorio Paradinight</h3>
-          <span class="hxh-nen-type">Emitter</span>
-          <p>A hot-headed young man who enters the Hunter Exam to get money to attend medical school and become a doctor who helps the poor for free.</p>
-        </article>
+                  <ul class="hxh-stats-list">
+                    <li><span class="stat-label">NAME:</span> Gon Freecss</li>
+                    <li><span class="stat-label">ROLE:</span> Protagonist / Hunter #405</li>
+                    <li><span class="stat-label">GENDER:</span> ♂ (Male)</li>
+                    <li><span class="stat-label">NEN TYPE:</span> Enhancer (強化系 - Kyōkakei)</li>
+                    <li><span class="stat-label">ABILITY:</span> Jajanken (Rock, Paper, Scissors)</li>
+                  </ul>
 
-        <!-- Hisoka -->
-        <article class="hxh-char-card transmuter">
-          <div class="hxh-char-img-wrapper">
-            <img src="hxh pictures/Hisoka.png" alt="Hisoka Morow">
+                  <div class="hxh-palette-container">
+                    <div class="hxh-palette-title">COLOR PALETTE</div>
+                    <div class="hxh-palette-swatches">
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #1a3d16;"></span>
+                        <span class="swatch-name">Hair</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #fce0cd;"></span>
+                        <span class="swatch-name">Skin</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #3b2005;"></span>
+                        <span class="swatch-name">Eyes</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #337d24;"></span>
+                        <span class="swatch-name">Clothes</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hxh-profile-media">
+                  <div class="hxh-bg-watermark">HUNTER</div>
+                  <img src="hxh pictures/Gon.png" alt="Gon Freecss" class="hxh-character-portrait">
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Killua -->
+            <div class="hxh-carousel-slide">
+              <div class="hxh-profile-card">
+                <div class="hxh-profile-details">
+                  <div class="hxh-profile-title">
+                    <span class="hxh-jp-title">キルア＝ゾルディック</span>
+                    <h3>KILLUA ZOLDYCK</h3>
+                  </div>
+
+                  <ul class="hxh-stats-list">
+                    <li><span class="stat-label">NAME:</span> Killua Zoldyck</li>
+                    <li><span class="stat-label">ROLE:</span> Ex-Assassin / Hunter #99</li>
+                    <li><span class="stat-label">GENDER:</span> ♂ (Male)</li>
+                    <li><span class="stat-label">NEN TYPE:</span> Transmuter (変化系 - Henkakei)</li>
+                    <li><span class="stat-label">ABILITY:</span> Godspeed / Lightning Aura</li>
+                  </ul>
+
+                  <div class="hxh-palette-container">
+                    <div class="hxh-palette-title">COLOR PALETTE</div>
+                    <div class="hxh-palette-swatches">
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #e6e6fa;"></span>
+                        <span class="swatch-name">Hair</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #fff0f5;"></span>
+                        <span class="swatch-name">Skin</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #1e90ff;"></span>
+                        <span class="swatch-name">Eyes</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #191970;"></span>
+                        <span class="swatch-name">Clothes</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hxh-profile-media">
+                  <div class="hxh-bg-watermark">HUNTER</div>
+                  <img src="hxh pictures/Killua.png" alt="Killua Zoldyck" class="hxh-character-portrait">
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Kurapika -->
+            <div class="hxh-carousel-slide">
+              <div class="hxh-profile-card">
+                <div class="hxh-profile-details">
+                  <div class="hxh-profile-title">
+                    <span class="hxh-jp-title">クラピカ</span>
+                    <h3>KURAPIKA</h3>
+                  </div>
+
+                  <ul class="hxh-stats-list">
+                    <li><span class="stat-label">NAME:</span> Kurapika</li>
+                    <li><span class="stat-label">ROLE:</span> Blacklist Hunter / Kurta Survivor</li>
+                    <li><span class="stat-label">GENDER:</span> ♂ (Male)</li>
+                    <li><span class="stat-label">NEN TYPE:</span> Conjurer / Specialist (特質系)</li>
+                    <li><span class="stat-label">ABILITY:</span> Conjured Chains / Emperor Time</li>
+                  </ul>
+
+                  <div class="hxh-palette-container">
+                    <div class="hxh-palette-title">COLOR PALETTE</div>
+                    <div class="hxh-palette-swatches">
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #ffd700;"></span>
+                        <span class="swatch-name">Hair</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #ffebd7;"></span>
+                        <span class="swatch-name">Skin</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #cc0000;"></span>
+                        <span class="swatch-name">Eyes</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #00008b;"></span>
+                        <span class="swatch-name">Clothes</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hxh-profile-media">
+                  <div class="hxh-bg-watermark">HUNTER</div>
+                  <img src="hxh pictures/Kurapika.png" alt="Kurapika" class="hxh-character-portrait">
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Leorio -->
+            <div class="hxh-carousel-slide">
+              <div class="hxh-profile-card">
+                <div class="hxh-profile-details">
+                  <div class="hxh-profile-title">
+                    <span class="hxh-jp-title">レオリオ＝パラディナィト</span>
+                    <h3>LEORIO PARADINIGHT</h3>
+                  </div>
+
+                  <ul class="hxh-stats-list">
+                    <li><span class="stat-label">NAME:</span> Leorio Paradinight</li>
+                    <li><span class="stat-label">ROLE:</span> Medical Student / Hunter #403</li>
+                    <li><span class="stat-label">GENDER:</span> ♂ (Male)</li>
+                    <li><span class="stat-label">NEN TYPE:</span> Emitter (放出系 - Hōshutsu-kei)</li>
+                    <li><span class="stat-label">ABILITY:</span> Remote Punch / Ultrasound Emission</li>
+                  </ul>
+
+                  <div class="hxh-palette-container">
+                    <div class="hxh-palette-title">COLOR PALETTE</div>
+                    <div class="hxh-palette-swatches">
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #1a1a1a;"></span>
+                        <span class="swatch-name">Hair</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #fce0cd;"></span>
+                        <span class="swatch-name">Skin</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #4b3621;"></span>
+                        <span class="swatch-name">Eyes</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #0a192f;"></span>
+                        <span class="swatch-name">Suit</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hxh-profile-media">
+                  <div class="hxh-bg-watermark">HUNTER</div>
+                  <img src="hxh pictures/Leorio.png" alt="Leorio Paradinight" class="hxh-character-portrait">
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Hisoka -->
+            <div class="hxh-carousel-slide">
+              <div class="hxh-profile-card">
+                <div class="hxh-profile-details">
+                  <div class="hxh-profile-title">
+                    <span class="hxh-jp-title">ヒソカ＝モロウ</span>
+                    <h3>HISOKA MOROW</h3>
+                  </div>
+
+                  <ul class="hxh-stats-list">
+                    <li><span class="stat-label">NAME:</span> Hisoka Morow</li>
+                    <li><span class="stat-label">ROLE:</span> Enigmatic Magician / Hunter #44</li>
+                    <li><span class="stat-label">GENDER:</span> ♂ (Male)</li>
+                    <li><span class="stat-label">NEN TYPE:</span> Transmuter (変化系 - Henkakei)</li>
+                    <li><span class="stat-label">ABILITY:</span> Bungee Gum / Texture Surprise</li>
+                  </ul>
+
+                  <div class="hxh-palette-container">
+                    <div class="hxh-palette-title">COLOR PALETTE</div>
+                    <div class="hxh-palette-swatches">
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #ff4081;"></span>
+                        <span class="swatch-name">Hair</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #ffffff;"></span>
+                        <span class="swatch-name">Makeup</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #ffeb3b;"></span>
+                        <span class="swatch-name">Eyes</span>
+                      </div>
+                      <div class="swatch-group">
+                        <span class="swatch-color" style="background-color: #673ab7;"></span>
+                        <span class="swatch-name">Outfit</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hxh-profile-media">
+                  <div class="hxh-bg-watermark">HUNTER</div>
+                  <img src="hxh pictures/Hisoka.png" alt="Hisoka Morow" class="hxh-character-portrait">
+                </div>
+              </div>
+            </div>
+
           </div>
-          <h3>Hisoka Morow</h3>
-          <span class="hxh-nen-type">Transmuter</span>
-          <p>A bizarre, sadistic magician obsessed with finding strong opponents to fight and kill. He takes a twisted interest in Gon and Killua's growth.</p>
-        </article>
+        </div>
+
+        <!-- Dot Indicators -->
+        <div class="hxh-carousel-dots" id="carouselDots"></div>
 
       </div>
     </section>
 
     <!-- Media Section -->
     <section id="media" class="hxh-card">
-      <div class="hxh-card-header">
-        <h2>Media & Visuals</h2>
-        <p class="hxh-tagline">Explore iconic moments from the series</p>
+      <div class="hxh-card-header text-center">
+        <p class="hxh-section-label">VISUAL CHRONICLES</p>
+        <h2>ICONIC ARCS & MOMENTS</h2>
       </div>
-      
+
       <div class="hxh-media-grid">
         <figure class="hxh-media-item">
           <img src="hxh pictures/hunterExam.png" alt="Hunter Exam Arc">
-          <figcaption>The Hunter Exam Arc</figcaption>
+          <figcaption>
+            <strong>The Hunter Exam</strong>
+            <span>Survival, trials, and dangerous alliances.</span>
+          </figcaption>
         </figure>
         <figure class="hxh-media-item">
           <img src="hxh pictures/nen.png" alt="Nen Aura Power">
-          <figcaption>Nen Manifestation</figcaption>
+          <figcaption>
+            <strong>Awakening Nen</strong>
+            <span>Mastering Ten, Zetsu, Ren, and Hatsu.</span>
+          </figcaption>
         </figure>
         <figure class="hxh-media-item">
           <img src="hxh pictures/chimira.png" alt="Chimera Ant Arc">
-          <figcaption>Chimera Ant Arc Atmosphere</figcaption>
+          <figcaption>
+            <strong>Chimera Ant War</strong>
+            <span>The ultimate test of humanity and power.</span>
+          </figcaption>
         </figure>
       </div>
     </section>
@@ -136,8 +347,12 @@
 
   <!-- Footer -->
   <footer class="hxh-footer">
-    <p>&copy; 2026 Fandemic | Hunter × Hunter created by Yoshihiro Togashi.</p>
+    <div class="hxh-footer-content">
+      <p class="hxh-footer-title">HUNTER × HUNTER ARCHIVE</p>
+      <p>&copy; 2026 Fandemic Portal | Created by Yoshihiro Togashi.</p>
+    </div>
   </footer>
 
+  <script src="hxh.js"></script>
 </body>
 </html>
