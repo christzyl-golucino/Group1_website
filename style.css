@@ -157,10 +157,10 @@ body {
 }
 .sonic-theme h2 { color: #1e90ff; }
 
-.hsr-theme {
-  border-left-color: #ffd700; /* Galactic Gold */
+.alnst-theme {
+  border-left-color: #00e5ff; /* Alien Stage Cyan */
 }
-.hsr-theme h2 { color: #ffd700; }
+.alnst-theme h2 { color: #00e5ff; }
 
 /* Footer */
 footer {
@@ -191,4 +191,3 @@ footer {
     font-size: 2.2rem;
   }
 }
-
