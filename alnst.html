@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alien Stage | Fandemic</title>
-  <!-- Link to dedicated Alien Stage CSS -->
+  <!-- Dedicated Alien Stage CSS -->
   <link rel="stylesheet" href="alnst.css">
 </head>
-<body class="alnst-page">
+<body>
 
   <!-- Navigation Bar -->
-  <nav class="alnst-nav">
-    <div class="alnst-logo">
-      <a href="index.html">Fandemic <span class="alnst-badge-tag">ALNST</span></a>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">Fandemic <span>ALNST</span></a>
     </div>
-    <ul class="alnst-nav-links">
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="hxh.html">Hunter × Hunter</a></li>
       <li><a href="friends.html">F.R.I.E.N.D.S</a></li>
@@ -24,129 +24,205 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="alnst-hero">
-    <div class="alnst-hero-inner">
-      <span class="alnst-official-tag">ANAKT GARDEN OFFICIAL ARCHIVE</span>
-      <h1>ALIEN <span class="alnst-x">STAGE</span></h1>
-      <p>Sing for survival. Perform for human pets. A dystopian music competition ruled by alien overlords.</p>
-      <a href="#summary" class="alnst-btn">Step onto the Stage</a>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="hero-label">ANAKT GARDEN OFFICIAL ARCHIVE</p>
+      <h1>ALIEN STAGE</h1>
+      <h2>SING TO SURVIVE</h2>
+      <p>Human pets forced to perform in a deadly vocal tournament ruled by extraterrestrial overlords. Every duet is a struggle between passion and execution.</p>
+      <div class="hero-buttons">
+        <a href="#summary" class="btn">Explore Archive</a>
+        <a href="#characters" class="btn secondary">View Contestants</a>
+      </div>
     </div>
   </header>
 
-  <main class="alnst-container">
+  <!-- Plot Summary Section -->
+  <section id="summary" class="section plot-section">
+    <div class="section-heading">
+      <p class="section-label">OVERVIEW</p>
+      <h2>Summary of the <span>Plot</span></h2>
+    </div>
+    <div class="plot-container">
+      <p>Set in a dystopian future where Earth has been invaded and conquered by aliens, humanity has been reduced to pets and entertainment for extra-terrestrial rulers. The ultimate manifestation of this hierarchy is <strong>Alien Stage</strong>, a brutal vocal competition held inside the elite <strong>Anakt Garden</strong> complex.</p>
+      <p>Human contestants raised in captivity are forced into 1v1 singing duels where alien audiences vote on performance, skill, and raw emotion. The winner advances to the next round, while the loser faces immediate execution. As the tournament progresses, deep childhood bonds, unrequited love, and quiet defiance turn every performance into a battlefield of emotional rebellion.</p>
+    </div>
+  </section>
 
-    <!-- Summary Section -->
-    <section id="summary" class="alnst-card">
-      <div class="alnst-card-header">
-        <h2>Summary of the Plot</h2>
-        <p class="alnst-tagline">"May this song be my last rebellion."</p>
-      </div>
-      <div class="alnst-card-body">
-        <p>Set in a dystopian future where Earth has been invaded and conquered by aliens, humanity has been reduced to pets and entertainment for the extra-terrestrial rulers. The ultimate manifestation of this system is <strong>Alien Stage</strong>, a brutal reality vocal tournament held inside the elite <strong>Anakt Garden</strong> complex.</p>
-        <p>Human contestants, raised in captivity, are forced to face each other in 1v1 singing duels where audiences vote on performance and emotion. The winner advances to the next round, while the loser faces immediate elimination—execution. As the competition progresses, deep childhood bonds, unspoken love, and quiet acts of defiance turn the gruesome stage into a battlefield of emotional rebellion.</p>
-      </div>
-    </section>
+  <!-- Main Characters Section -->
+  <section id="characters" class="section characters-section">
+    <div class="section-heading">
+      <p class="section-label">ANAKT GARDEN</p>
+      <h2>Main <span>Contestants</span></h2>
+    </div>
 
-    <!-- Main Characters Section -->
-    <section id="characters" class="alnst-card">
-      <div class="alnst-card-header">
-        <h2>Main Contestants</h2>
-        <p class="alnst-tagline">The human performers competing in the tournament</p>
-      </div>
+    <div class="character-grid">
       
-      <div class="alnst-char-grid">
-        
-        <!-- Mizi -->
-        <article class="alnst-char-card mizi">
-          <div class="alnst-char-img-wrapper">
-            <img src="alnst pictures/Mizi.png" alt="Mizi">
-          </div>
+      <!-- Mizi -->
+      <article class="character-card">
+        <div class="character-image">
+          <img src="alnst pictures/Mizi.png" alt="Mizi">
+        </div>
+        <div class="character-info">
+          <span class="character-number">#01</span>
           <h3>Mizi</h3>
-          <span class="alnst-status-type">Contestant #1</span>
-          <p>A bright, energetic, and empathetic girl with pink hair whose vibrant singing style hides deep emotional turbulence. She shares a profound bond with Sua.</p>
-        </article>
+          <p class="role">Contestant</p>
+          <p>A bright and empathetic performer whose energetic vocals mask deep emotional turbulence and a tragic bond with Sua.</p>
+        </div>
+      </article>
 
-        <!-- Sua -->
-        <article class="alnst-char-card sua">
-          <div class="alnst-char-img-wrapper">
-            <img src="alnst pictures/Sua.png" alt="Sua">
-          </div>
+      <!-- Sua -->
+      <article class="character-card">
+        <div class="character-image">
+          <img src="alnst pictures/Sua.png" alt="Sua">
+        </div>
+        <div class="character-info">
+          <span class="character-number">#02</span>
           <h3>Sua</h3>
-          <span class="alnst-status-type">Contestant #2</span>
-          <p>A quiet, composed singer with a soft, melancholic voice. Her devotion to protecting Mizi drives her every choice on the stage.</p>
-        </article>
+          <p class="role">Contestant</p>
+          <p>A quiet, composed singer with a soft voice. Her devotion to protecting Mizi drives her every choice on the stage.</p>
+        </div>
+      </article>
 
-        <!-- Till -->
-        <article class="alnst-char-card till">
-          <div class="alnst-char-img-wrapper">
-            <img src="alnst pictures/Till.png" alt="Till">
-          </div>
+      <!-- Till -->
+      <article class="character-card">
+        <div class="character-image">
+          <img src="alnst pictures/Till.png" alt="Till">
+        </div>
+        <div class="character-info">
+          <span class="character-number">#03</span>
           <h3>Till</h3>
-          <span class="alnst-status-type">Contestant #3</span>
-          <p>A rebellious rock artist known for his gritty vocals and fierce resistance against alien authority. He holds long-standing, unrequited feelings for Mizi.</p>
-        </article>
+          <p class="role">Contestant</p>
+          <p>A rebellious rocker known for gritty vocals and aggressive resistance against alien authority. He holds unrequited feelings for Mizi.</p>
+        </div>
+      </article>
 
-        <!-- Ivan -->
-        <article class="alnst-char-card ivan">
-          <div class="alnst-char-img-wrapper">
-            <img src="alnst pictures/Ivan.png" alt="Ivan">
-          </div>
+      <!-- Ivan -->
+      <article class="character-card">
+        <div class="character-image">
+          <img src="alnst pictures/Ivan.png" alt="Ivan">
+        </div>
+        <div class="character-info">
+          <span class="character-number">#04</span>
           <h3>Ivan</h3>
-          <span class="alnst-status-type">Contestant #4</span>
-          <p>A calculating and charismatic singer with dark motives and a tragic past. His intense obsession with Till leads to dramatic confrontations.</p>
-        </article>
+          <p class="role">Contestant</p>
+          <p>A calculating singer with immense charisma and dark motives. His fixation on Till culminates in drastic stage actions.</p>
+        </div>
+      </article>
 
-        <!-- Luka -->
-        <article class="alnst-char-card luka">
-          <div class="alnst-char-img-wrapper">
-            <img src="alnst pictures/Luka.png" alt="Luka">
-          </div>
+      <!-- Luka -->
+      <article class="character-card">
+        <div class="character-image">
+          <img src="alnst pictures/Luka.png" alt="Luka">
+        </div>
+        <div class="character-info">
+          <span class="character-number">#05</span>
           <h3>Luka</h3>
-          <span class="alnst-status-type">Champion</span>
-          <p>The top performer of Anakt Garden. Elegant, cold, and immensely skilled, he dominates the tournament with unyielding perfection.</p>
-        </article>
+          <p class="role">Champion</p>
+          <p>The undefeated top performer of Anakt Garden. Cold and precise, he dominates every round with effortless skill.</p>
+        </div>
+      </article>
 
-        <!-- Hyuna -->
-        <article class="alnst-char-card hyuna">
-          <div class="alnst-char-img-wrapper">
-            <img src="alnst pictures/Hyuna.png" alt="Hyuna">
-          </div>
+      <!-- Hyuna -->
+      <article class="character-card">
+        <div class="character-image">
+          <img src="alnst pictures/Hyuna.png" alt="Hyuna">
+        </div>
+        <div class="character-info">
+          <span class="character-number">#06</span>
           <h3>Hyuna</h3>
-          <span class="alnst-status-type">Rebel / Survivor</span>
-          <p>A former contestant who escaped the alien system. She leads human resistance forces operating outside Anakt Garden's walls.</p>
-        </article>
+          <p class="role">Rebel Leader</p>
+          <p>A former contestant who survived and escaped the alien system, now leading human forces operating outside the stage.</p>
+        </div>
+      </article>
 
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Media Section -->
-    <section id="media" class="alnst-card">
-      <div class="alnst-card-header">
-        <h2>Media & Visuals</h2>
-        <p class="alnst-tagline">Key rounds and iconic performances</p>
-      </div>
-      
-      <div class="alnst-media-grid">
-        <figure class="alnst-media-item">
-          <img src="alnst pictures/round1.png" alt="Round 1 Performance">
-          <figcaption>Round 1: Sweet Dream</figcaption>
-        </figure>
-        <figure class="alnst-media-item">
-          <img src="alnst pictures/round3.png" alt="Round 3 Performance">
-          <figcaption>Round 3: Unknown Till The End</figcaption>
-        </figure>
-        <figure class="alnst-media-item">
-          <img src="alnst pictures/round6.png" alt="Round 6 Performance">
-          <figcaption>Round 6: Cure Duel</figcaption>
-        </figure>
-      </div>
-    </section>
+  <!-- Media Section -->
+  <section id="media" class="section media-section">
+    <div class="section-heading">
+      <p class="section-label">PERFORMANCES</p>
+      <h2>Key <span>Rounds</span></h2>
+    </div>
+    <p class="media-description">Relive the iconic musical duels and pivotal moments from throughout the Alien Stage tournament.</p>
 
-  </main>
+    <div class="media-grid">
+      <!-- Round 1 (Large Card) -->
+      <div class="media-card large">
+        <img src="alnst pictures/round1.png" alt="Round 1 Sweet Dream">
+        <div class="media-overlay">
+          <p>ROUND 1</p>
+          <h3>Sweet Dream (Mizi vs Sua)</h3>
+        </div>
+      </div>
+
+      <!-- Round 3 -->
+      <div class="media-card">
+        <img src="alnst pictures/round3.png" alt="Round 3 Unknown">
+        <div class="media-overlay">
+          <p>ROUND 3</p>
+          <h3>Unknown (Till vs ACakt)</h3>
+        </div>
+      </div>
+
+      <!-- Round 6 -->
+      <div class="media-card">
+        <img src="alnst pictures/round6.png" alt="Round 6 Cure">
+        <div class="media-overlay">
+          <p>ROUND 6</p>
+          <h3>Cure (Ivan vs Till)</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Series Info Section -->
+  <section class="section about-section">
+    <div class="section-heading">
+      <p class="section-label">SERIES DETAILS</p>
+      <h2>Archive <span>Stats</span></h2>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <span>CREATORS</span>
+        <h3>VIVINOS & Q-Mew</h3>
+      </div>
+      <div class="info-box">
+        <span>FORMAT</span>
+        <h3>Animated Web Series</h3>
+      </div>
+      <div class="info-box">
+        <span>GENRE</span>
+        <h3>Sci-Fi / Music / Thriller</h3>
+      </div>
+      <div class="info-box">
+        <span>SETTING</span>
+        <h3>Anakt Garden Arena</h3>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="alnst-footer">
-    <p>&copy; 2026 Fandemic | Alien Stage created by Vivinos & Q-Mew.</p>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Fandemic</div>
+      <p>Your ultimate hub for anime, games, and web series fandoms.</p>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="hxh.html">Hunter × Hunter</a>
+        <a href="friends.html">F.R.I.E.N.D.S</a>
+        <a href="sonic.html">Sonic</a>
+        <a href="alnst.html">Alien Stage</a>
+      </div>
+
+      <div class="footer-line"></div>
+
+      <p class="copyright">&copy; 2026 Fandemic. Created for fans by fans.</p>
+      <p class="disclaimer">Alien Stage is created and owned by VIVINOS and Studio Lico.</p>
+    </div>
   </footer>
 
 </body>
