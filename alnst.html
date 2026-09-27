@@ -49,131 +49,414 @@
     </div>
   </section>
 
-  <!-- Main Characters Section -->
+  <!-- Main Characters Carousel Section -->
   <section id="characters" class="section characters-section">
     <div class="section-heading">
-      <p class="section-label">ANAKT GARDEN</p>
-      <h2>Main <span>Contestants</span></h2>
+      <p class="section-label">ANAKT GARDEN ARCHIVE</p>
+      <h2>Contestant <span>Profiles</span></h2>
     </div>
 
-    <div class="character-grid">
+    <div class="carousel-container" id="character-carousel">
+      <button class="carousel-btn prev-btn" aria-label="Previous Character">&lt;</button>
       
-      <!-- Mizi -->
-      <article class="character-card">
-        <div class="character-image">
-          <img src="alnst pictures/Mizi.png" alt="Mizi">
-        </div>
-        <div class="character-info">
-          <span class="character-number">#01</span>
-          <h3>Mizi</h3>
-          <p class="role">Contestant</p>
-          <p>A bright and empathetic performer whose energetic vocals mask deep emotional turbulence and a tragic bond with Sua.</p>
-        </div>
-      </article>
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track">
+          
+          <!-- Mizi -->
+          <article class="carousel-slide">
+            <div class="hud-profile-card">
+              <div class="hud-header">
+                <div class="hud-pill">
+                  <span class="hud-pill-dot"></span>
+                  <span>ALIEN STAGE PROFILE</span>
+                </div>
+                <span class="hud-tag">[RERUN]</span>
+              </div>
+              <div class="hud-card-title">PROFILE</div>
+              <div class="hud-body">
+                <div class="hud-portrait-frame">
+                  <div class="hud-portrait-inner">
+                    <img src="alnst pictures/Mizi.webp" alt="Mizi">
+                  </div>
+                </div>
+                <div class="hud-details">
+                  <h3 class="hud-char-name">MIZI</h3>
+                  <ul class="hud-stats">
+                    <li><span class="stat-label">NAME:</span> <span class="stat-val">Mizi (미지)</span></li>
+                    <li><span class="stat-label">AGE:</span> <span class="stat-val">20</span></li>
+                    <li><span class="stat-label">ID NO:</span> <span class="stat-val">020512</span></li>
+                    <li><span class="stat-label">AFFILIATION:</span> <span class="stat-val">Anakt Garden 50th</span></li>
+                    <li><span class="stat-label">STATUS:</span> <span class="stat-val status-alive">SURVIVED</span></li>
+                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Bright & empathetic, holds a deep bond with Sua.</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="hud-footer">
+                <span class="hud-subtext">SIGNATURE</span>
+                <div class="hud-signature">Mizi</div>
+              </div>
+            </div>
+          </article>
 
-      <!-- Sua -->
-      <article class="character-card">
-        <div class="character-image">
-          <img src="alnst pictures/Sua.png" alt="Sua">
-        </div>
-        <div class="character-info">
-          <span class="character-number">#02</span>
-          <h3>Sua</h3>
-          <p class="role">Contestant</p>
-          <p>A quiet, composed singer with a soft voice. Her devotion to protecting Mizi drives her every choice on the stage.</p>
-        </div>
-      </article>
+          <!-- Sua -->
+          <article class="carousel-slide">
+            <div class="hud-profile-card">
+              <div class="hud-header">
+                <div class="hud-pill">
+                  <span class="hud-pill-dot"></span>
+                  <span>ALIEN STAGE PROFILE</span>
+                </div>
+                <span class="hud-tag">[RERUN]</span>
+              </div>
+              <div class="hud-card-title">PROFILE</div>
+              <div class="hud-body">
+                <div class="hud-portrait-frame">
+                  <div class="hud-portrait-inner">
+                    <img src="alnst pictures/Sua.webp" alt="Sua">
+                  </div>
+                </div>
+                <div class="hud-details">
+                  <h3 class="hud-char-name">SUA</h3>
+                  <ul class="hud-stats">
+                    <li><span class="stat-label">NAME:</span> <span class="stat-val">Sua (수아)</span></li>
+                    <li><span class="stat-label">AGE:</span> <span class="stat-val">20</span></li>
+                    <li><span class="stat-label">ID NO:</span> <span class="stat-val">021204</span></li>
+                    <li><span class="stat-label">AFFILIATION:</span> <span class="stat-val">Anakt Garden 50th</span></li>
+                    <li><span class="stat-label">STATUS:</span> <span class="stat-val status-dead">ELIMINATED</span></li>
+                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Quiet and devoted to protecting Mizi at all costs.</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="hud-footer">
+                <span class="hud-subtext">SIGNATURE</span>
+                <div class="hud-signature">Sua</div>
+              </div>
+            </div>
+          </article>
 
-      <!-- Till -->
-      <article class="character-card">
-        <div class="character-image">
-          <img src="alnst pictures/Till.png" alt="Till">
-        </div>
-        <div class="character-info">
-          <span class="character-number">#03</span>
-          <h3>Till</h3>
-          <p class="role">Contestant</p>
-          <p>A rebellious rocker known for gritty vocals and aggressive resistance against alien authority. He holds unrequited feelings for Mizi.</p>
-        </div>
-      </article>
+          <!-- Till -->
+          <article class="carousel-slide">
+            <div class="hud-profile-card">
+              <div class="hud-header">
+                <div class="hud-pill">
+                  <span class="hud-pill-dot"></span>
+                  <span>ALIEN STAGE PROFILE</span>
+                </div>
+                <span class="hud-tag">[RERUN]</span>
+              </div>
+              <div class="hud-card-title">PROFILE</div>
+              <div class="hud-body">
+                <div class="hud-portrait-frame">
+                  <div class="hud-portrait-inner">
+                    <img src="alnst pictures/Till.webp" alt="Till">
+                  </div>
+                </div>
+                <div class="hud-details">
+                  <h3 class="hud-char-name">TILL</h3>
+                  <ul class="hud-stats">
+                    <li><span class="stat-label">NAME:</span> <span class="stat-val">Till (틸)</span></li>
+                    <li><span class="stat-label">AGE:</span> <span class="stat-val">22</span></li>
+                    <li><span class="stat-label">ID NO:</span> <span class="stat-val">010902</span></li>
+                    <li><span class="stat-label">AFFILIATION:</span> <span class="stat-val">Anakt Garden 50th</span></li>
+                    <li><span class="stat-label">STATUS:</span> <span class="stat-val status-alive">SURVIVED</span></li>
+                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Rebellious rocker with aggressive vocals.</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="hud-footer">
+                <span class="hud-subtext">SIGNATURE</span>
+                <div class="hud-signature">Till</div>
+              </div>
+            </div>
+          </article>
 
-      <!-- Ivan -->
-      <article class="character-card">
-        <div class="character-image">
-          <img src="alnst pictures/Ivan.png" alt="Ivan">
-        </div>
-        <div class="character-info">
-          <span class="character-number">#04</span>
-          <h3>Ivan</h3>
-          <p class="role">Contestant</p>
-          <p>A calculating singer with immense charisma and dark motives. His fixation on Till culminates in drastic stage actions.</p>
-        </div>
-      </article>
+          <!-- Ivan -->
+          <article class="carousel-slide">
+            <div class="hud-profile-card">
+              <div class="hud-header">
+                <div class="hud-pill">
+                  <span class="hud-pill-dot"></span>
+                  <span>ALIEN STAGE PROFILE</span>
+                </div>
+                <span class="hud-tag">[RERUN]</span>
+              </div>
+              <div class="hud-card-title">PROFILE</div>
+              <div class="hud-body">
+                <div class="hud-portrait-frame">
+                  <div class="hud-portrait-inner">
+                    <img src="alnst pictures/Ivan" alt="Ivan">
+                  </div>
+                </div>
+                <div class="hud-details">
+                  <h3 class="hud-char-name">IVAN</h3>
+                  <ul class="hud-stats">
+                    <li><span class="stat-label">NAME:</span> <span class="stat-val">Ivan (이반)</span></li>
+                    <li><span class="stat-label">AGE:</span> <span class="stat-val">22</span></li>
+                    <li><span class="stat-label">ID NO:</span> <span class="stat-val">010310</span></li>
+                    <li><span class="stat-label">AFFILIATION:</span> <span class="stat-val">Anakt Garden 50th</span></li>
+                    <li><span class="stat-label">STATUS:</span> <span class="stat-val status-dead">ELIMINATED</span></li>
+                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Calculating & charismatic. Deeply fixated on Till.</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="hud-footer">
+                <span class="hud-subtext">SIGNATURE</span>
+                <div class="hud-signature">Ivan</div>
+              </div>
+            </div>
+          </article>
 
-      <!-- Luka -->
-      <article class="character-card">
-        <div class="character-image">
-          <img src="alnst pictures/Luka.png" alt="Luka">
-        </div>
-        <div class="character-info">
-          <span class="character-number">#05</span>
-          <h3>Luka</h3>
-          <p class="role">Champion</p>
-          <p>The undefeated top performer of Anakt Garden. Cold and precise, he dominates every round with effortless skill.</p>
-        </div>
-      </article>
+          <!-- Luka -->
+          <article class="carousel-slide">
+            <div class="hud-profile-card">
+              <div class="hud-header">
+                <div class="hud-pill">
+                  <span class="hud-pill-dot"></span>
+                  <span>ALIEN STAGE PROFILE</span>
+                </div>
+                <span class="hud-tag">[RERUN]</span>
+              </div>
+              <div class="hud-card-title">PROFILE</div>
+              <div class="hud-body">
+                <div class="hud-portrait-frame">
+                  <div class="hud-portrait-inner">
+                    <img src="alnst pictures/Luka.webp" alt="Luka">
+                  </div>
+                </div>
+                <div class="hud-details">
+                  <h3 class="hud-char-name">LUKA</h3>
+                  <ul class="hud-stats">
+                    <li><span class="stat-label">NAME:</span> <span class="stat-val">Luka (루카)</span></li>
+                    <li><span class="stat-label">AGE:</span> <span class="stat-val">25</span></li>
+                    <li><span class="stat-label">ID NO:</span> <span class="stat-val">001128</span></li>
+                    <li><span class="stat-label">AFFILIATION:</span> <span class="stat-val">Anakt Garden Champion</span></li>
+                    <li><span class="stat-label">STATUS:</span> <span class="stat-val status-alive">ACTIVE</span></li>
+                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Undefeated reigning top contestant of the stage.</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="hud-footer">
+                <span class="hud-subtext">SIGNATURE</span>
+                <div class="hud-signature">Luka</div>
+              </div>
+            </div>
+          </article>
 
-      <!-- Hyuna -->
-      <article class="character-card">
-        <div class="character-image">
-          <img src="alnst pictures/Hyuna.png" alt="Hyuna">
-        </div>
-        <div class="character-info">
-          <span class="character-number">#06</span>
-          <h3>Hyuna</h3>
-          <p class="role">Rebel Leader</p>
-          <p>A former contestant who survived and escaped the alien system, now leading human forces operating outside the stage.</p>
-        </div>
-      </article>
+          <!-- Hyuna -->
+          <article class="carousel-slide">
+            <div class="hud-profile-card">
+              <div class="hud-header">
+                <div class="hud-pill">
+                  <span class="hud-pill-dot"></span>
+                  <span>ALIEN STAGE PROFILE</span>
+                </div>
+                <span class="hud-tag">[RERUN]</span>
+              </div>
+              <div class="hud-card-title">PROFILE</div>
+              <div class="hud-body">
+                <div class="hud-portrait-frame">
+                  <div class="hud-portrait-inner">
+                    <img src="alnst pictures/Hyuna.webp" alt="Hyuna">
+                  </div>
+                </div>
+                <div class="hud-details">
+                  <h3 class="hud-char-name">HYUNA</h3>
+                  <ul class="hud-stats">
+                    <li><span class="stat-label">NAME:</span> <span class="stat-val">Hyuna (현아)</span></li>
+                    <li><span class="stat-label">AGE:</span> <span class="stat-val">26</span></li>
+                    <li><span class="stat-label">ID NO:</span> <span class="stat-val">990115</span></li>
+                    <li><span class="stat-label">AFFILIATION:</span> <span class="stat-val">Rebel Resistance</span></li>
+                    <li><span class="stat-label">STATUS:</span> <span class="stat-val status-alive">ESCAPED</span></li>
+                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Former contestant who broke free and leads the rebels.</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="hud-footer">
+                <span class="hud-subtext">SIGNATURE</span>
+                <div class="hud-signature">Hyuna</div>
+              </div>
+            </div>
+          </article>
 
+        </div>
+      </div>
+
+      <button class="carousel-btn next-btn" aria-label="Next Character">&gt;</button>
+      
+      <div class="carousel-dots"></div>
     </div>
   </section>
 
-  <!-- Media Section -->
+  <!-- Episodes / Rounds Carousel Section -->
   <section id="media" class="section media-section">
     <div class="section-heading">
-      <p class="section-label">PERFORMANCES</p>
-      <h2>Key <span>Rounds</span></h2>
+      <p class="section-label">PERFORMANCES & STAGES</p>
+      <h2>Official <span>Episodes</span></h2>
     </div>
-    <p class="media-description">Relive the iconic musical duels and pivotal moments from throughout the Alien Stage tournament.</p>
+    <p class="media-description">Explore the official song rounds and special episodes that make up the Alien Stage competition timeline.</p>
 
-    <div class="media-grid">
-      <!-- Round 1 (Large Card) -->
-      <div class="media-card large">
-        <img src="alnst pictures/round1.png" alt="Round 1 Sweet Dream">
-        <div class="media-overlay">
-          <p>ROUND 1</p>
-          <h3>Sweet Dream (Mizi vs Sua)</h3>
+    <div class="carousel-container" id="episode-carousel">
+      <button class="carousel-btn prev-btn" aria-label="Previous Episode">&lt;</button>
+
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track">
+
+          <!-- Episode 1 -->
+          <div class="carousel-slide">
+            <div class="episode-card">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/round1.jfif" alt="Round 1 - Sweet Dream">
+                <span class="episode-badge">🌸 ROUND 1</span>
+              </div>
+              <div class="episode-content">
+                <h3>My Clematis</h3>
+                <p class="episode-matchup">Mizi vs. Sua</p>
+                <p class="episode-desc">This round introduces the tragic rules of the tournament. Childhood best friends (and lovers) Mizi and Sua are pitted against each other. They sing a deeply emotional, harmonious duet that flashes back to their beautiful days growing up together in Anakt Garden. Mizi wins by a single point (87 to 86), only to watch in horror as Sua is immediately executed for losing.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Episode 2 -->
+          <div class="carousel-slide">
+            <div class="episode-card">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/round2.jfif" alt="Round 2 - My Clematis">
+                <span class="episode-badge">🎸 ROUND 2</span>
+              </div>
+              <div class="episode-content">
+                <h3>Unknown</h3>
+                <p class="episode-matchup">Till vs. Acorn</p>
+                <p class="episode-desc">The rebellious, grey-haired rock contestant Till faces off against an opponent named Acorn. Till breaks tournament rules by playing a chaotic punk-rock song he wrote himself about his unrequited love for Mizi. He smashes his guitar and completely dominates the stage, defeating Acorn 153 to 20.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Episode 3 -->
+          <div class="carousel-slide">
+            <div class="episode-card">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/round3.jfif" alt="Round 3 - Unknown">
+                <span class="episode-badge">🖤 ROUND 3</span>
+              </div>
+              <div class="episode-content">
+                <h3>Round 3 | Black Sorrow</h3>
+                <p class="episode-matchup">Ivan vs. Marty</p>
+                <p class="episode-desc">Ivan, a heavily favored human raised by wealthy alien owners, faces off against an opponent named Marty. Ivan delivers a dramatic, operatic orchestral-rock performance that reveals his dark, obsessive fixation on Till. Ivan easily wins the match with a score of 90 to 68.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Episode 4 -->
+          <div class="carousel-slide">
+            <div class="episode-card">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/round4.jfif" alt="Round 4 - BLACK SORROW">
+                <span class="episode-badge">🩸 ROUND 4 (Off-Screen)</span>
+              </div>
+              <div class="episode-content">
+                <h3>No Official Track Released</h3>
+                <p class="episode-matchup">Luka vs. Durian</p>
+                <p class="episode-desc">This round takes place entirely off-screen but is briefly depicted via flashbacks. The cold-blooded, elite champion Luka cleanly defeats his unnamed opponent, Durian, leaving him dead on a blood-stained stage and cementing Luka as the season's top favorite.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Episode 5 -->
+          <div class="carousel-slide">
+            <div class="episode-card">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/round5.jfif" alt="Round 5 - Ruler of my Heart">
+                <span class="episode-badge">👑 ROUND 5</span>
+              </div>
+              <div class="episode-content">
+                <h3>Ruler of my Heart</h3>
+                <p class="episode-matchup">Mizi vs. Luka</p>
+                <p class="episode-desc">Luka and a heavily traumatized Mizi. Luka maliciously mimics Sua's voice and gestures to emotionally break Mizi on stage. Driven to a blind rage, Mizi stops singing entirely to physically assault Luka. Before alien guards can execute her, the human resistance crashes the venue and rescues her.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Episode 6 -->
+          <div class="carousel-slide">
+            <div class="episode-card">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/round6.jfif" alt="Round 6 - Cure">
+                <span class="episode-badge">💔 ROUND 6</span>
+              </div>
+              <div class="episode-content">
+                <h3>Cure</h3>
+                <p class="episode-matchup">Ivan vs. Till</p>
+                <p class="episode-desc">Forced into a direct duel, childhood friends Ivan and Till face each other. Till, believing Mizi is dead, sings with a completely defeated, melancholic tone. Ivan performs a beautiful track about his unrequited love for Till. Realizing Till has given up and will be executed if he loses, Ivan drops his microphone, forces a kiss on Till, and strangles him. This intentionally triggers the stage's automated safety guards, who shoot and kill Ivan for violence, sacrificing himself so Till survives.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Special Episode -->
+          <div class="carousel-slide">
+            <div class="episode-card special">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/all-in.jfif" alt="Special - All-In">
+                <span class="episode-badge special-badge">💥 Interlude: The Resistance</span>
+              </div>
+              <div class="episode-content">
+                <h3>All-In</h3>
+                <p class="episode-matchup">Hyuna & Resistance</p>
+                <p class="episode-desc"> Moving away from the official stage brackets, this high-energy rock anthem follows Hyuna and the anti-Alien Stage human rebellion. It tracks Mizi recovering from her trauma and joining the rebel forces as they mount a heavy tactical assault on Anakt Garden to save remaining captives.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Finale Episode -->
+          <div class="carousel-slide">
+            <div class="episode-card special">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/finale.jfif" alt="Finale - Wiegenlied">
+                <span class="episode-badge">🏁 FINALE</span>
+              </div>
+              <div class="episode-content">
+                <h3>Blink Gone</h3>
+                <p class="episode-matchup">Till vs. Luka</p>
+                <p class="episode-desc"> The grand finale of the 50th season between Till and Luka. Weaponizing Till's trauma, Luka mimics the imagery of Ivan choking him to psychologically torture Till mid-performance. The pressure drives Till into a severe panic attack and deep hallucinations, causing him to break down and stop singing entirely. Luka wins the tournament, while Till suffers a brutal physical and mental collapse.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Episode: Wiege -->
+          <div class="carousel-slide">
+            <div class="episode-card special">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/wiege.jfif" alt="Episode - Wiege">
+                <span class="episode-badge special-badge">🕊️ Epilogue Backstory</span>
+              </div>
+              <div class="episode-content">
+                <h3>Wiege</h3>
+                <p class="episode-matchup">Luka & Hyuna Memory</p>
+                <p class="episode-desc"> Rather than a competitive duel, this haunting orchestral cinematic features Luka and Hyuna reminiscing. It explores their intertwined childhood history and past relationship long before the current tournament, shedding light on the tragic motivations that drive Luka's compliance and Hyuna's rebellion.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Episode: Karma -->
+          <div class="carousel-slide">
+            <div class="episode-card special">
+              <div class="episode-image-wrapper">
+                <img src="alnst pictures/karma.jfif" alt="Episode - Karma">
+                <span class="episode-badge special-badge">🪐 Season Finale</span>
+              </div>
+              <div class="episode-content">
+                <h3>Karma</h3>
+                <p class="episode-matchup">Sua & Mizi</p>
+                <p class="episode-desc">The ultimate climax of the main storyline. Following the aftermath of the final round, Mizi confronts Luka on the collapsing stage. Drowning in immense survivor's guilt over losing Sua, Hyuna, and Till, Mizi violently attacks Luka and denounces the cycle of exploitation. She then shoots the alien host Isaac, takes control of his tablet, and forces a missile to target the stadium in a nihilistic bid to destroy the entire system once and for all</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Round 3 -->
-      <div class="media-card">
-        <img src="alnst pictures/round3.png" alt="Round 3 Unknown">
-        <div class="media-overlay">
-          <p>ROUND 3</p>
-          <h3>Unknown (Till vs ACakt)</h3>
-        </div>
-      </div>
+      <button class="carousel-btn next-btn" aria-label="Next Episode">&gt;</button>
 
-      <!-- Round 6 -->
-      <div class="media-card">
-        <img src="alnst pictures/round6.png" alt="Round 6 Cure">
-        <div class="media-overlay">
-          <p>ROUND 6</p>
-          <h3>Cure (Ivan vs Till)</h3>
-        </div>
-      </div>
+      <div class="carousel-dots"></div>
     </div>
   </section>
 
@@ -224,6 +507,9 @@
       <p class="disclaimer">Alien Stage is created and owned by VIVINOS and Studio Lico.</p>
     </div>
   </footer>
+
+  <!-- Dedicated Alien Stage JS Script -->
+  <script src="alnst.js"></script>
 
 </body>
 </html>
