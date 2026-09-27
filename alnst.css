@@ -1,0 +1,310 @@
+/* ==========================================
+   Global Reset & Base Styles
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.alnst-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b0c12;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   Navigation Bar
+   ========================================== */
+.alnst-nav {
+  position: sticky;
+  top: 0;
+  background-color: rgba(13, 15, 26, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.15);
+  z-index: 1000;
+  border-bottom: 1px solid #1a233a;
+}
+
+.alnst-logo a {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.alnst-badge-tag {
+  font-size: 0.75rem;
+  background-color: #00e5ff;
+  color: #0b0c12;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+  font-weight: bold;
+}
+
+.alnst-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.alnst-nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.alnst-nav-links a:hover,
+.alnst-nav-links a.active {
+  color: #00e5ff;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   Hero Section
+   ========================================== */
+.alnst-hero {
+  text-align: center;
+  padding: 6rem 1.5rem 4rem;
+  background: radial-gradient(circle at center, #161f36 0%, #0b0c12 100%);
+  border-bottom: 1px solid #1e293b;
+}
+
+.alnst-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.alnst-official-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: #00e5ff;
+  border: 1px solid #00e5ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+}
+
+.alnst-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.alnst-hero .alnst-x {
+  color: #ff0055;
+}
+
+.alnst-hero p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.alnst-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #00e5ff 0%, #0088ff 100%);
+  color: #0b0c12;
+  padding: 0.9rem 2.2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.alnst-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.7);
+}
+
+/* ==========================================
+   Main Container & Cards
+   ========================================== */
+.alnst-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.alnst-card {
+  background-color: #121624;
+  border-radius: 12px;
+  padding: 2.5rem;
+  border: 1px solid #1e293b;
+  border-left: 6px solid #00e5ff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.alnst-card-header h2 {
+  font-size: 2rem;
+  color: #00e5ff;
+  margin-bottom: 0.3rem;
+}
+
+.alnst-tagline {
+  font-style: italic;
+  color: #ff0055;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.alnst-card-body p {
+  margin-bottom: 1rem;
+  color: #cbd5e1;
+}
+
+/* ==========================================
+   Character Grid & Cards
+   ========================================== */
+.alnst-char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.alnst-char-card {
+  background-color: #181d30;
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid #262f4a;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alnst-char-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 229, 255, 0.2);
+}
+
+.alnst-char-img-wrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #00e5ff;
+  background-color: #0b0c12;
+}
+
+.alnst-char-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.alnst-char-card h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.alnst-status-type {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #222c44;
+  color: #00e5ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  margin-bottom: 0.8rem;
+}
+
+.alnst-char-card p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* Individual Character Theme Highlights */
+.alnst-char-card.mizi .alnst-char-img-wrapper { border-color: #ff66c4; }
+.alnst-char-card.sua .alnst-char-img-wrapper { border-color: #a855f7; }
+.alnst-char-card.till .alnst-char-img-wrapper { border-color: #38bdf8; }
+.alnst-char-card.ivan .alnst-char-img-wrapper { border-color: #ef4444; }
+.alnst-char-card.luka .alnst-char-img-wrapper { border-color: #facc15; }
+.alnst-char-card.hyuna .alnst-char-img-wrapper { border-color: #10b981; }
+
+/* ==========================================
+   Media Section Grid
+   ========================================== */
+.alnst-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.alnst-media-item {
+  background-color: #181d30;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #262f4a;
+}
+
+.alnst-media-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.alnst-media-item figcaption {
+  padding: 0.8rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+.alnst-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #0d0f1a;
+  color: #64748b;
+  font-size: 0.9rem;
+  border-top: 1px solid #1e293b;
+  margin-top: 4rem;
+}
+
+/* ==========================================
+   Responsive Layouts
+   ========================================== */
+@media (max-width: 768px) {
+  .alnst-nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .alnst-nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .alnst-hero h1 {
+    font-size: 2.5rem;
+  }
+}
