@@ -33,6 +33,7 @@
       <div class="hero-buttons">
         <a href="#summary" class="btn">Explore Archive</a>
         <a href="#characters" class="btn secondary">View Contestants</a>
+        <a href="#trivia" class="btn secondary">Play Trivia</a>
       </div>
     </div>
   </header>
@@ -56,12 +57,12 @@
       <h2>Contestant <span>Profiles</span></h2>
     </div>
 
-    <div class="carousel-container" id="character-carousel">
+    <div class="carousel-container" id="character-carousel" tabindex="0">
       <button class="carousel-btn prev-btn" aria-label="Previous Character">&lt;</button>
-      
+
       <div class="carousel-track-wrapper">
-        <div class="carousel-track">
-          
+        <div class="carousel-track" aria-live="polite">
+
           <!-- Mizi -->
           <article class="carousel-slide">
             <div class="hud-profile-card">
@@ -87,7 +88,7 @@
                     <li><span class="stat-label">ID NO:</span> <span class="stat-val">020512</span></li>
                     <li><span class="stat-label">AFFILIATION:</span> <span class="stat-val">Anakt Garden 50th</span></li>
                     <li><span class="stat-label">STATUS:</span> <span class="stat-val status-alive">SURVIVED</span></li>
-                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Bright & empathetic, holds a deep bond with Sua.</span></li>
+                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Bright &amp; empathetic, holds a deep bond with Sua.</span></li>
                   </ul>
                 </div>
               </div>
@@ -184,7 +185,7 @@
               <div class="hud-body">
                 <div class="hud-portrait-frame">
                   <div class="hud-portrait-inner">
-                    <img src="alnst pictures/Ivan" alt="Ivan">
+                    <img src="alnst pictures/Ivan.png" alt="Ivan">
                   </div>
                 </div>
                 <div class="hud-details">
@@ -195,7 +196,7 @@
                     <li><span class="stat-label">ID NO:</span> <span class="stat-val">010310</span></li>
                     <li><span class="stat-label">AFFILIATION:</span> <span class="stat-val">Anakt Garden 50th</span></li>
                     <li><span class="stat-label">STATUS:</span> <span class="stat-val status-dead">ELIMINATED</span></li>
-                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Calculating & charismatic. Deeply fixated on Till.</span></li>
+                    <li><span class="stat-label">NOTES:</span> <span class="stat-val">Calculating &amp; charismatic. Deeply fixated on Till.</span></li>
                   </ul>
                 </div>
               </div>
@@ -282,7 +283,7 @@
       </div>
 
       <button class="carousel-btn next-btn" aria-label="Next Character">&gt;</button>
-      
+
       <div class="carousel-dots"></div>
     </div>
   </section>
@@ -290,22 +291,22 @@
   <!-- Episodes / Rounds Carousel Section -->
   <section id="media" class="section media-section">
     <div class="section-heading">
-      <p class="section-label">PERFORMANCES & STAGES</p>
+      <p class="section-label">PERFORMANCES &amp; STAGES</p>
       <h2>Official <span>Episodes</span></h2>
     </div>
     <p class="media-description">Explore the official song rounds and special episodes that make up the Alien Stage competition timeline.</p>
 
-    <div class="carousel-container" id="episode-carousel">
+    <div class="carousel-container" id="episode-carousel" tabindex="0">
       <button class="carousel-btn prev-btn" aria-label="Previous Episode">&lt;</button>
 
       <div class="carousel-track-wrapper">
-        <div class="carousel-track">
+        <div class="carousel-track" aria-live="polite">
 
           <!-- Episode 1 -->
           <div class="carousel-slide">
             <div class="episode-card">
               <div class="episode-image-wrapper">
-                <img src="alnst pictures/round1.jfif" alt="Round 1 - Sweet Dream">
+                <img src="alnst pictures/round1.jfif" alt="Round 1 - My Clematis">
                 <span class="episode-badge">🌸 ROUND 1</span>
               </div>
               <div class="episode-content">
@@ -320,7 +321,7 @@
           <div class="carousel-slide">
             <div class="episode-card">
               <div class="episode-image-wrapper">
-                <img src="alnst pictures/round2.jfif" alt="Round 2 - My Clematis">
+                <img src="alnst pictures/round2.jfif" alt="Round 2 - Unknown">
                 <span class="episode-badge">🎸 ROUND 2</span>
               </div>
               <div class="episode-content">
@@ -335,11 +336,11 @@
           <div class="carousel-slide">
             <div class="episode-card">
               <div class="episode-image-wrapper">
-                <img src="alnst pictures/round3.jfif" alt="Round 3 - Unknown">
+                <img src="alnst pictures/round3.jfif" alt="Round 3 - Black Sorrow">
                 <span class="episode-badge">🖤 ROUND 3</span>
               </div>
               <div class="episode-content">
-                <h3>Round 3 | Black Sorrow</h3>
+                <h3>Black Sorrow</h3>
                 <p class="episode-matchup">Ivan vs. Marty</p>
                 <p class="episode-desc">Ivan, a heavily favored human raised by wealthy alien owners, faces off against an opponent named Marty. Ivan delivers a dramatic, operatic orchestral-rock performance that reveals his dark, obsessive fixation on Till. Ivan easily wins the match with a score of 90 to 68.</p>
               </div>
@@ -350,7 +351,7 @@
           <div class="carousel-slide">
             <div class="episode-card">
               <div class="episode-image-wrapper">
-                <img src="alnst pictures/round4.jfif" alt="Round 4 - BLACK SORROW">
+                <img src="alnst pictures/round4.jfif" alt="Round 4 - Luka vs. Durian">
                 <span class="episode-badge">🩸 ROUND 4 (Off-Screen)</span>
               </div>
               <div class="episode-content">
@@ -400,8 +401,8 @@
               </div>
               <div class="episode-content">
                 <h3>All-In</h3>
-                <p class="episode-matchup">Hyuna & Resistance</p>
-                <p class="episode-desc"> Moving away from the official stage brackets, this high-energy rock anthem follows Hyuna and the anti-Alien Stage human rebellion. It tracks Mizi recovering from her trauma and joining the rebel forces as they mount a heavy tactical assault on Anakt Garden to save remaining captives.</p>
+                <p class="episode-matchup">Hyuna &amp; Resistance</p>
+                <p class="episode-desc">Moving away from the official stage brackets, this high-energy rock anthem follows Hyuna and the anti-Alien Stage human rebellion. It tracks Mizi recovering from her trauma and joining the rebel forces as they mount a heavy tactical assault on Anakt Garden to save remaining captives.</p>
               </div>
             </div>
           </div>
@@ -410,13 +411,13 @@
           <div class="carousel-slide">
             <div class="episode-card special">
               <div class="episode-image-wrapper">
-                <img src="alnst pictures/finale.jfif" alt="Finale - Wiegenlied">
+                <img src="alnst pictures/finale.jfif" alt="Finale - Blink Gone">
                 <span class="episode-badge">🏁 FINALE</span>
               </div>
               <div class="episode-content">
                 <h3>Blink Gone</h3>
                 <p class="episode-matchup">Till vs. Luka</p>
-                <p class="episode-desc"> The grand finale of the 50th season between Till and Luka. Weaponizing Till's trauma, Luka mimics the imagery of Ivan choking him to psychologically torture Till mid-performance. The pressure drives Till into a severe panic attack and deep hallucinations, causing him to break down and stop singing entirely. Luka wins the tournament, while Till suffers a brutal physical and mental collapse.</p>
+                <p class="episode-desc">The grand finale of the 50th season between Till and Luka. Weaponizing Till's trauma, Luka mimics the imagery of Ivan choking him to psychologically torture Till mid-performance. The pressure drives Till into a severe panic attack and deep hallucinations, causing him to break down and stop singing entirely. Luka wins the tournament, while Till suffers a brutal physical and mental collapse.</p>
               </div>
             </div>
           </div>
@@ -430,8 +431,8 @@
               </div>
               <div class="episode-content">
                 <h3>Wiege</h3>
-                <p class="episode-matchup">Luka & Hyuna Memory</p>
-                <p class="episode-desc"> Rather than a competitive duel, this haunting orchestral cinematic features Luka and Hyuna reminiscing. It explores their intertwined childhood history and past relationship long before the current tournament, shedding light on the tragic motivations that drive Luka's compliance and Hyuna's rebellion.</p>
+                <p class="episode-matchup">Luka &amp; Hyuna Memory</p>
+                <p class="episode-desc">Rather than a competitive duel, this haunting orchestral cinematic features Luka and Hyuna reminiscing. It explores their intertwined childhood history and past relationship long before the current tournament, shedding light on the tragic motivations that drive Luka's compliance and Hyuna's rebellion.</p>
               </div>
             </div>
           </div>
@@ -445,8 +446,8 @@
               </div>
               <div class="episode-content">
                 <h3>Karma</h3>
-                <p class="episode-matchup">Sua & Mizi</p>
-                <p class="episode-desc">The ultimate climax of the main storyline. Following the aftermath of the final round, Mizi confronts Luka on the collapsing stage. Drowning in immense survivor's guilt over losing Sua, Hyuna, and Till, Mizi violently attacks Luka and denounces the cycle of exploitation. She then shoots the alien host Isaac, takes control of his tablet, and forces a missile to target the stadium in a nihilistic bid to destroy the entire system once and for all</p>
+                <p class="episode-matchup">Mizi vs. Luka</p>
+                <p class="episode-desc">The ultimate climax of the main storyline. Following the aftermath of the final round, Mizi confronts Luka on the collapsing stage. Drowning in immense survivor's guilt over losing Sua, Hyuna, and Till, Mizi violently attacks Luka and denounces the cycle of exploitation. She then shoots the alien host Isaac, takes control of his tablet, and forces a missile to target the stadium in a nihilistic bid to destroy the entire system once and for all.</p>
               </div>
             </div>
           </div>
@@ -460,6 +461,39 @@
     </div>
   </section>
 
+  <!-- Trivia Section -->
+  <section id="trivia" class="section trivia-section">
+    <div class="section-heading">
+      <p class="section-label">TEST YOUR KNOWLEDGE</p>
+      <h2>Alien Stage <span>Trivia</span></h2>
+    </div>
+
+    <div class="trivia-card" id="trivia-card">
+      <!-- Quiz view -->
+      <div id="trivia-quiz">
+        <div class="trivia-top">
+          <span id="trivia-progress">QUESTION 1 / 8</span>
+          <span id="trivia-score">SCORE: 0</span>
+        </div>
+        <div class="trivia-bar"><div id="trivia-bar-fill"></div></div>
+
+        <h3 id="trivia-question" class="trivia-question"></h3>
+        <div id="trivia-options" class="trivia-options"></div>
+        <p id="trivia-feedback" class="trivia-feedback" aria-live="polite"></p>
+
+        <button class="btn trivia-next" id="trivia-next" disabled>Next Question</button>
+      </div>
+
+      <!-- Result view -->
+      <div id="trivia-result" class="trivia-result" hidden>
+        <p class="trivia-result-label">TRANSMISSION COMPLETE</p>
+        <h3 id="trivia-result-score"></h3>
+        <p id="trivia-result-msg"></p>
+        <button class="btn secondary" id="trivia-restart">Try Again</button>
+      </div>
+    </div>
+  </section>
+
   <!-- About / Series Info Section -->
   <section class="section about-section">
     <div class="section-heading">
@@ -470,7 +504,7 @@
     <div class="info-grid">
       <div class="info-box">
         <span>CREATORS</span>
-        <h3>VIVINOS & Q-Mew</h3>
+        <h3>VIVINOS &amp; Q-Mew</h3>
       </div>
       <div class="info-box">
         <span>FORMAT</span>

@@ -181,6 +181,7 @@ body {
 
 .section {
     padding: 100px 8%;
+    scroll-margin-top: 80px;
 }
 
 .section-heading {
@@ -252,6 +253,12 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 60px;
+    outline: none;
+}
+
+.carousel-container:focus-visible {
+    outline: 2px dashed #00e5ff;
+    outline-offset: 6px;
 }
 
 .carousel-track-wrapper {
@@ -265,6 +272,7 @@ body {
     display: flex;
     transition: transform 0.4s ease-in-out;
     width: 100%;
+    touch-action: pan-y;
 }
 
 .carousel-slide {
@@ -646,6 +654,161 @@ body {
 
 
 /* =========================================
+   TRIVIA
+========================================= */
+
+.trivia-section {
+    background:
+        radial-gradient(circle at bottom left, #1b2742, transparent 45%),
+        #04070d;
+}
+
+.trivia-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 36px;
+    background: rgba(6, 15, 28, 0.92);
+    border: 2px solid #00e5ff;
+    border-radius: 28px;
+    box-shadow:
+        0 0 25px rgba(0, 229, 255, 0.18),
+        inset 0 0 15px rgba(0, 229, 255, 0.05);
+}
+
+.trivia-top {
+    display: flex;
+    justify-content: space-between;
+    color: #00e5ff;
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.trivia-bar {
+    height: 8px;
+    background: rgba(0, 229, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 28px;
+}
+
+#trivia-bar-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #00e5ff, #ff0055);
+    box-shadow: 0 0 10px #00e5ff;
+    transition: width 0.4s ease;
+}
+
+.trivia-question {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.trivia-options {
+    display: grid;
+    gap: 12px;
+}
+
+.trivia-option {
+    text-align: left;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #e2e8f0;
+    background: #0f1626;
+    border: 2px solid #1a2744;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.trivia-option:hover:not(:disabled) {
+    border-color: #00e5ff;
+    background: rgba(0, 229, 255, 0.1);
+    transform: translateX(6px);
+}
+
+.trivia-option:disabled {
+    cursor: default;
+}
+
+.trivia-option.correct {
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.12);
+    color: #00ff88;
+}
+
+.trivia-option.wrong {
+    border-color: #ff0055;
+    background: rgba(255, 0, 85, 0.12);
+    color: #ff0055;
+}
+
+.trivia-feedback {
+    min-height: 28px;
+    margin: 18px 0;
+    color: #cbd5e1;
+    font-size: 15px;
+}
+
+.trivia-next {
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.trivia-next:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.trivia-result {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.trivia-result[hidden] {
+    display: none;
+}
+
+.trivia-result-label {
+    color: #ff0055;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.trivia-result h3 {
+    font-size: 56px;
+    font-style: italic;
+    color: #ffffff;
+    text-shadow: 3px 3px #00e5ff, 6px 6px #ff0055;
+    margin-bottom: 16px;
+}
+
+.trivia-result p:not(.trivia-result-label) {
+    color: #cbd5e1;
+    font-size: 18px;
+    margin-bottom: 26px;
+}
+
+.trivia-result .btn {
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+
+/* =========================================
    ABOUT / INFO
 ========================================= */
 
@@ -747,9 +910,9 @@ footer {
     margin-bottom: 5px;
 }
 
-.disclaimer {
+.footer-content .disclaimer {
     font-size: 12px;
-    color: #475569 !important;
+    color: #475569;
 }
 
 
@@ -845,6 +1008,18 @@ footer {
 
     .hud-stats {
         align-items: center;
+    }
+
+    .trivia-card {
+        padding: 22px;
+    }
+
+    .trivia-question {
+        font-size: 20px;
+    }
+
+    .trivia-result h3 {
+        font-size: 40px;
     }
 
     .footer-links {
