@@ -47,5 +47,5 @@ jobs:
           port: 22 # Port 22
           password: ${{ secrets.SFTP_PASSWORD }} # Your group's site password
           local_path: "./" # Local folder root
-          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/" # Group web directory
+          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/"
           args: "-o ConnectTimeout=30"
