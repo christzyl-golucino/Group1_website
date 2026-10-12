@@ -6,7 +6,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* keeps anchored sections clear of the fixed nav */
 }
 
 :root {
@@ -16,6 +20,7 @@
   --hxh-green-bright: #00ff66;
   --hxh-green-dark: #123d24;
   --hxh-gold: #ffcc00;
+  --hxh-red: #ff4d5e;
   --hxh-text: #ffffff;
   --hxh-text-muted: #82a390;
   --hxh-border: rgba(0, 255, 102, 0.25);
@@ -26,7 +31,7 @@ body.hxh-page {
   background: var(--hxh-bg-dark);
   color: var(--hxh-text);
   line-height: 1.6;
-  background-image: 
+  background-image:
     radial-gradient(circle at 10% 20%, rgba(0, 255, 102, 0.06) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(255, 204, 0, 0.05) 0%, transparent 40%);
   background-attachment: fixed;
@@ -104,10 +109,17 @@ body.hxh-page {
   justify-content: center;
   text-align: center;
   padding: 120px 20px 80px;
-  background: linear-gradient(180deg, rgba(7,13,10,0.6) 0%, rgba(7,13,10,1) 100%),
+  background: linear-gradient(180deg, rgba(7, 13, 10, 0.6) 0%, rgba(7, 13, 10, 1) 100%),
               url("hxh pictures/hunterExam.png");
   background-size: cover;
   background-position: center;
+}
+
+.hxh-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(7, 13, 10, 0.7) 100%);
+  pointer-events: none;
 }
 
 .hxh-hero-inner {
@@ -190,13 +202,18 @@ body.hxh-page {
   margin: 0 auto;
 }
 
+/* Spacing wrapper for non-card sections (characters, trivia) */
+.hxh-section {
+  margin-bottom: 70px;
+}
+
 .hxh-card {
   background: var(--hxh-bg-card);
   border: 2px solid var(--hxh-border);
   border-left: 6px solid var(--hxh-green-bright);
   border-radius: 18px;
   padding: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -477,7 +494,198 @@ body.hxh-page {
 }
 
 /* =========================================
-   8. MEDIA GRID
+   8. TRIVIA (HUNTER LICENSE EXAM)
+========================================= */
+
+.ht-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--hxh-bg-card);
+  border: 3px solid var(--hxh-green-bright);
+  border-radius: 16px;
+  padding: 40px 36px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.15), 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ht-screen {
+  display: none;
+}
+
+.ht-screen.ht-active {
+  display: block;
+  animation: htFade 0.35s ease;
+}
+
+@keyframes htFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ht-intro {
+  color: var(--hxh-text-muted);
+  font-size: 17px;
+  margin-bottom: 16px;
+}
+
+.ht-best {
+  color: var(--hxh-gold);
+  font-weight: bold;
+  letter-spacing: 1px;
+  min-height: 24px;
+  margin-bottom: 16px;
+}
+
+.ht-btn {
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.ht-btn[hidden] {
+  display: none;
+}
+
+.ht-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--hxh-gold);
+  margin-bottom: 10px;
+}
+
+.ht-top b {
+  color: var(--hxh-green-bright);
+}
+
+.ht-progress {
+  height: 8px;
+  background: rgba(0, 255, 102, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+
+.ht-progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--hxh-green-dark), var(--hxh-green-bright));
+  box-shadow: 0 0 10px var(--hxh-green-bright);
+  transition: width 0.35s ease;
+}
+
+.ht-question {
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.35;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.ht-options {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.ht-option {
+  background: rgba(0, 255, 102, 0.04);
+  color: #ffffff;
+  border: 2px solid var(--hxh-border);
+  border-left: 5px solid var(--hxh-green-bright);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.ht-option:hover:not(:disabled) {
+  background: var(--hxh-bg-card-hover);
+  border-color: var(--hxh-green-bright);
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.3);
+  transform: translateX(5px);
+}
+
+.ht-option:disabled {
+  cursor: default;
+}
+
+.ht-option.ht-correct {
+  background: rgba(0, 255, 102, 0.18);
+  border-color: var(--hxh-green-bright);
+  box-shadow: 0 0 14px rgba(0, 255, 102, 0.4);
+}
+
+.ht-option.ht-wrong {
+  background: rgba(255, 77, 94, 0.15);
+  border-color: var(--hxh-red);
+  border-left-color: var(--hxh-red);
+}
+
+.ht-feedback {
+  min-height: 26px;
+  margin: 18px 0 10px;
+  font-weight: bold;
+}
+
+.ht-feedback.ht-good { color: var(--hxh-green-bright); }
+.ht-feedback.ht-bad  { color: var(--hxh-red); }
+
+.ht-rank {
+  font-size: 32px;
+  font-style: italic;
+  color: #ffffff;
+  text-shadow: 2px 2px var(--hxh-green-dark);
+  margin-bottom: 8px;
+}
+
+.ht-final {
+  font-size: 76px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  color: var(--hxh-green-bright);
+  text-shadow: 0 0 18px rgba(0, 255, 102, 0.5);
+  margin-bottom: 14px;
+}
+
+.ht-final small {
+  font-size: 26px;
+  color: var(--hxh-text-muted);
+  text-shadow: none;
+}
+
+.ht-misses {
+  display: grid;
+  gap: 10px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.ht-miss {
+  background: #09120c;
+  border: 1px solid var(--hxh-border);
+  border-left: 5px solid var(--hxh-red);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--hxh-text-muted);
+}
+
+.ht-miss strong {
+  display: block;
+  color: var(--hxh-gold);
+  margin-bottom: 2px;
+}
+
+/* =========================================
+   9. MEDIA GRID
 ========================================= */
 
 .hxh-media-grid {
@@ -517,7 +725,7 @@ body.hxh-page {
 }
 
 /* =========================================
-   9. FOOTER
+   10. FOOTER
 ========================================= */
 
 .hxh-footer {
@@ -541,7 +749,7 @@ body.hxh-page {
 }
 
 /* =========================================
-   10. RESPONSIVE DESIGN
+   11. RESPONSIVE DESIGN
 ========================================= */
 
 @media (max-width: 850px) {
@@ -575,11 +783,31 @@ body.hxh-page {
     gap: 12px;
   }
 
+  html {
+    scroll-padding-top: 20px;
+  }
+
   .hxh-container {
     padding: 40px 4%;
   }
 
+  .hxh-card {
+    padding: 26px 20px;
+  }
+
   .hxh-profile-details {
     padding: 20px;
+  }
+
+  .ht-wrap {
+    padding: 26px 16px;
+  }
+
+  .ht-question {
+    font-size: 20px;
+  }
+
+  .ht-final {
+    font-size: 60px;
   }
 }

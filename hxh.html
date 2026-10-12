@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hunter × Hunter | Fandemic Universe</title>
   <link rel="stylesheet" href="hxh.css">
 </head>
+
 <body class="hxh-page">
 
   <!-- Navigation Bar -->
@@ -27,10 +29,12 @@
     <div class="hxh-hero-overlay"></div>
     <div class="hxh-hero-inner">
       <h1>HUNTER <span class="hxh-x">×</span> HUNTER</h1>
-      <p class="hxh-hero-sub">"You should enjoy the little detours to the fullest. Because that's where you'll find the things more important than what you want."</p>
+      <p class="hxh-hero-sub">"You should enjoy the little detours to the fullest. Because that's where you'll find the
+        things more important than what you want."</p>
       <div class="hxh-hero-actions">
         <a href="#summary" class="hxh-btn primary">Enter the Exam</a>
         <a href="#characters" class="hxh-btn secondary">View Hunters</a>
+        <a href="#trivia" class="hxh-btn secondary">Take the Test</a>
       </div>
     </div>
   </header>
@@ -44,13 +48,18 @@
         <h2>SUMMARY OF THE PLOT</h2>
       </div>
       <div class="hxh-card-body">
-        <p>The story follows <strong>Gon Freecss</strong>, a young boy who discovers that his father Ging—who he believed to be dead—is alive and renowned as one of the greatest Hunters in the world. Hunters are elite individuals licensed to track down secret treasures, rare beasts, and dangerous fugitives.</p>
-        <p>Driven to understand why his father chose his career over him, Gon leaves Whale Island to take the deadly <strong>Hunter Examination</strong>. Along his journey, he forms unbreakable bonds with Killua, Kurapika, and Leorio as they unlock <strong>Nen</strong>—the supernatural ability to manipulate one's own life energy.</p>
+        <p>The story follows <strong>Gon Freecss</strong>, a young boy who discovers that his father Ging—who he
+          believed to be dead—is alive and renowned as one of the greatest Hunters in the world. Hunters are elite
+          individuals licensed to track down secret treasures, rare beasts, and dangerous fugitives.</p>
+        <p>Driven to understand why his father chose his career over him, Gon leaves Whale Island to take the deadly
+          <strong>Hunter Examination</strong>. Along his journey, he forms unbreakable bonds with Killua, Kurapika, and
+          Leorio as they unlock <strong>Nen</strong>—the supernatural ability to manipulate one's own life energy.
+        </p>
       </div>
     </section>
 
     <!-- Main Characters Data Sheet Carousel Section -->
-    <section id="characters" style="margin-bottom: 60px;">
+    <section id="characters" class="hxh-section">
       <div class="hxh-section-heading">
         <p class="hxh-section-label">NEN USER ARCHIVE</p>
         <h2>CHARACTER <span>FILES</span></h2>
@@ -58,7 +67,7 @@
 
       <!-- Carousel Container Wrapper -->
       <div class="hxh-carousel-wrapper">
-        
+
         <!-- Navigation Buttons -->
         <button class="hxh-carousel-btn prev-btn" id="prevBtn" aria-label="Previous Profile">&lt;</button>
         <button class="hxh-carousel-btn next-btn" id="nextBtn" aria-label="Next Profile">&gt;</button>
@@ -311,6 +320,51 @@
       </div>
     </section>
 
+    <!-- Trivia Section -->
+    <section id="trivia" class="hxh-section">
+      <div class="hxh-section-heading">
+        <p class="hxh-section-label">HUNTER LICENSE EXAM</p>
+        <h2>NEN <span>TRIVIA</span></h2>
+      </div>
+
+      <div class="ht-wrap">
+
+        <!-- Start Screen -->
+        <div class="ht-screen ht-active" id="htStart">
+          <p class="ht-intro">Ten questions stand between you and your Hunter License. Do you have what it takes to
+            pass?</p>
+          <p class="ht-best" id="htBest"></p>
+          <button class="hxh-btn primary ht-btn" id="htStartBtn">Begin the Exam</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div class="ht-screen" id="htQuiz">
+          <div class="ht-top">
+            <span id="htCounter"></span>
+            <span>SCORE: <b id="htScore">0</b></span>
+          </div>
+          <div class="ht-progress">
+            <div class="ht-progress-bar" id="htProgress"></div>
+          </div>
+          <h3 class="ht-question" id="htQuestion"></h3>
+          <div class="ht-options" id="htOptions"></div>
+          <div class="ht-feedback" id="htFeedback" aria-live="polite"></div>
+          <button class="hxh-btn secondary ht-btn" id="htNextBtn" hidden>Next Question</button>
+        </div>
+
+        <!-- Result Screen -->
+        <div class="ht-screen" id="htResult">
+          <p class="hxh-section-label">EXAM RESULT</p>
+          <h3 class="ht-rank" id="htRank"></h3>
+          <div class="ht-final"><span id="htFinal">0</span><small id="htTotal">/10</small></div>
+          <p class="ht-intro" id="htMessage"></p>
+          <div class="ht-misses" id="htMisses"></div>
+          <button class="hxh-btn primary ht-btn" id="htRetryBtn">Retake the Exam</button>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Media Section -->
     <section id="media" class="hxh-card">
       <div class="hxh-card-header text-center">
@@ -355,4 +409,5 @@
 
   <script src="hxh.js"></script>
 </body>
+
 </html>
