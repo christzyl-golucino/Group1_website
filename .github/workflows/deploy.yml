@@ -53,5 +53,5 @@ jobs:
           port: 22
           password: ${{ secrets.SFTP_PASSWORD }}
           local_path: "./"
-          remote_path: "/home/lsu-source-test/htdocs/test.lsu-source.org/"
+          remote_path: C:\Users\LS213\Documents
           args: "-o ConnectTimeout=30"
