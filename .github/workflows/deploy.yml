@@ -7,53 +7,45 @@ on:
     branches: ["main"]
 
 jobs:
+  # STEP 1: Continuous Integration (Test code on pushes and pull requests)
   validate-code:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Verify HTML files and structure
-        shell: bash
+      - name: Verify HTML Files Exist and Validate Structure
         run: |
-          set -euo pipefail
-          test -f index.html
+          if [ -f "index.html" ]; then
+            echo "SUCCESS: index.html found."
+          else
+            echo "ERROR: index.html is missing!" && exit 1
+          fi
 
-          shopt -s nullglob
+          # Checks all HTML files in the repository for basic structure
           for file in *.html; do
-            grep -qi "<html" "$file" || {
-              echo "Invalid HTML structure in $file"
-              exit 1
-            }
+            if [ -f "$file" ]; then
+              grep -iq "<html" "$file" && echo "Validated structure for $file" || (echo "Invalid HTML structure in $file" && exit 1)
+            fi
           done
 
+  # STEP 2: Continuous Deployment (Runs ONLY when code is merged/pushed to main)
   deploy-to-server:
-    needs: validate-code
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate-code # Ensures tests pass before deploying
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' # <--- Only deploys on main branch pushes
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout Repository Code
+        uses: actions/checkout@v5
 
-      - name: Verify deployment secrets
-        shell: bash
-        env:
-          SFTP_USER: ${{ secrets.SFTP_USER }}
-          SFTP_HOST: ${{ secrets.SFTP_HOST }}
-          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
-        run: |
-          set -euo pipefail
-          : "${SFTP_USER:?SFTP_USER is missing}"
-          : "${SFTP_HOST:?SFTP_HOST is missing}"
-          : "${SFTP_PASSWORD:?SFTP_PASSWORD is missing}"
-
+      # This replaces manual WinSCP drag-and-drop by uploading via SFTP
       - name: Transfer Files via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          username: ${{ secrets.SFTP_USER }}
-          server: ${{ secrets.SFTP_HOST }}
-          port: 22
-          password: ${{ secrets.SFTP_PASSWORD }}
-          local_path: "."
-          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/"
-          args: "-o ConnectTimeout=30 -o StrictHostKeyChecking=no"
+          username: ${{ secrets.SFTP_USER }} # lsu-ccsea-porsh
+          server: ${{ secrets.SFTP_HOST }} # 185.210.144.35
+          port: 22 # Port 22
+          password: ${{ secrets.SFTP_PASSWORD }} # Your group's site password
+          local_path: "./" # Local folder root
+          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/" # Group web directory
+          args: "-o ConnectTimeout=30"
