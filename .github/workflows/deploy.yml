@@ -38,14 +38,14 @@ jobs:
       - name: Checkout Repository Code
         uses: actions/checkout@v5
 
-      # This replaces manual WinSCP drag-and-drop by uploading via SFTP
+      # Uploads project files via SFTP to the target web directory
       - name: Transfer Files via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          username: ${{ secrets.SFTP_USER }} # lsu-ccsea-porsh
-          server: ${{ secrets.SFTP_HOST }} # 185.210.144.35
-          port: 22 # Port 22
-          password: ${{ secrets.SFTP_PASSWORD }} # Your group's site password
-          local_path: "./" # Local folder root
-          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/" # Group web directory
+          username: ${{ secrets.SFTP_USER }}
+          server: ${{ secrets.SFTP_HOST }}
+          port: 22
+          password: ${{ secrets.SFTP_PASSWORD }}
+          local_path: "./"
+          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/"
           args: "-o ConnectTimeout=30"
