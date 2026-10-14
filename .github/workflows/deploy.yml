@@ -9,7 +9,7 @@ on:
 jobs:
   # STEP 1: Continuous Integration (Test code on pushes and pull requests)
   validate-code:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -31,21 +31,21 @@ jobs:
 
   # STEP 2: Continuous Deployment (Runs ONLY when code is merged/pushed to main)
   deploy-to-server:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: validate-code # Ensures tests pass before deploying
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' # <--- Only deploys on main branch pushes
     steps:
       - name: Checkout Repository Code
         uses: actions/checkout@v5
 
-      # Uploads project files via SFTP to the target web directory
+      # This replaces manual WinSCP drag-and-drop by uploading via SFTP
       - name: Transfer Files via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          username: ${{ secrets.SFTP_USER }}
-          server: ${{ secrets.SFTP_HOST }}
-          port: 22
-          password: ${{ secrets.SFTP_PASSWORD }}
-          local_path: "./"
-          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/"
+          username: ${{ secrets.SFTP_USER }} # lsu-ccsea-porsh
+          server: ${{ secrets.SFTP_HOST }} # 185.210.144.35
+          port: 22 # Port 22
+          password: ${{ secrets.SFTP_PASSWORD }} # Your group's site password
+          local_path: "./" # Local folder root
+          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/" # Group web directory
           args: "-o ConnectTimeout=30"
