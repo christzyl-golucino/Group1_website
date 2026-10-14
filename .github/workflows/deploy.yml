@@ -31,7 +31,7 @@ jobs:
 
   # STEP 2: Continuous Deployment (Runs ONLY when code is merged/pushed to main)
   deploy-to-server:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: validate-code # Ensures tests pass before deploying
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' # <--- Only deploys on main branch pushes
     steps:
