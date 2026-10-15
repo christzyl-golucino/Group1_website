@@ -1,320 +1,585 @@
-/* ==========================================================================
-   HUNTER × HUNTER DEDICATED STYLESHEET (hxh-style.css)
-   Isolated from primary website CSS
-   ========================================================================== */
+/* =========================================
+   1. RESET & BASE CONFIGURATION
+========================================= */
 
-/* HxH Specific Variables */
-.hxh-page {
-  --hxh-bg-dark: #0a0e0b;          /* Dark Hunter license slate */
-  --hxh-bg-card: #131a15;          /* Card container dark moss */
-  --hxh-green: #2ecc71;            /* Hunter License Green */
-  --hxh-gold: #f1c40f;             /* Hunter Emblem Gold */
-  --hxh-text: #e0e6e2;             /* Off-white text */
-  --hxh-text-muted: #88998d;       /* Muted gray-green */
-  --hxh-border: #1f2d22;           /* Subtle dark border */
-
-  /* Nen Ability Colors */
-  --nen-enhancer: #2ecc71;
-  --nen-transmuter: #f39c12;
-  --nen-specialist: #9b59b6;
-  --nen-emitter: #e74c3c;
-
-  background-color: var(--hxh-bg-dark);
-  color: var(--hxh-text);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-}
-
-/* Reset for isolated page */
-.hxh-page * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-/* --------------------------------------------------------------------------
-   1. Isolated Navigation Bar
-   -------------------------------------------------------------------------- */
+:root {
+  --hxh-bg-dark: #070d0a;
+  --hxh-bg-card: #0f1a14;
+  --hxh-bg-card-hover: #14241c;
+  --hxh-green-bright: #00ff66;
+  --hxh-green-dark: #123d24;
+  --hxh-gold: #ffcc00;
+  --hxh-text: #ffffff;
+  --hxh-text-muted: #82a390;
+  --hxh-border: rgba(0, 255, 102, 0.25);
+}
+
+body.hxh-page {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--hxh-bg-dark);
+  color: var(--hxh-text);
+  line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 255, 102, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(255, 204, 0, 0.05) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* =========================================
+   2. NAVIGATION BAR
+========================================= */
+
 .hxh-nav {
-  background-color: var(--hxh-bg-card);
-  border-bottom: 3px solid var(--hxh-green);
-  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 18px 7%;
+  background: rgba(7, 13, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--hxh-green-bright);
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
 }
 
 .hxh-logo a {
-  color: #ffffff;
+  color: var(--hxh-green-bright);
   text-decoration: none;
-  font-weight: 800;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 900;
+  font-style: italic;
+  text-shadow: 2px 2px #000000;
 }
 
 .hxh-badge-tag {
-  background-color: var(--hxh-green);
-  color: var(--hxh-bg-dark);
-  font-size: 0.75rem;
-  padding: 0.1rem 0.5rem;
-  border-radius: 3px;
-  margin-left: 0.4rem;
+  background: var(--hxh-green-bright);
+  color: #000;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
   vertical-align: middle;
+  font-style: normal;
 }
 
 .hxh-nav-links {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+  list-style: none;
+  gap: 28px;
 }
 
 .hxh-nav-links a {
   color: var(--hxh-text-muted);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .hxh-nav-links a:hover,
 .hxh-nav-links a.active {
-  color: var(--hxh-green);
-  border-bottom: 2px solid var(--hxh-green);
-  padding-bottom: 2px;
+  color: var(--hxh-green-bright);
+  text-shadow: 0 0 10px var(--hxh-green-bright);
 }
 
-/* --------------------------------------------------------------------------
-   2. Hero Banner
-   -------------------------------------------------------------------------- */
+/* =========================================
+   3. HERO SECTION
+========================================= */
+
 .hxh-hero {
-  background: linear-gradient(rgba(10, 14, 11, 0.8), rgba(10, 14, 11, 0.95)),
-              url('hxh pictures/background.png') center/cover;
-  padding: 4.5rem 1.5rem;
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  border-bottom: 1px solid var(--hxh-border);
+  padding: 120px 20px 80px;
+  background: linear-gradient(180deg, rgba(7,13,10,0.6) 0%, rgba(7,13,10,1) 100%),
+              url("hxh pictures/hunterExam.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .hxh-hero-inner {
-  max-width: 750px;
-  margin: 0 auto;
-}
-
-.hxh-official-tag {
-  display: inline-block;
-  color: var(--hxh-gold);
-  border: 1px solid var(--hxh-gold);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  padding: 0.25rem 0.75rem;
-  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
 }
 
 .hxh-hero h1 {
-  font-size: 2.8rem;
+  font-size: clamp(40px, 8vw, 80px);
+  line-height: 1;
+  font-style: italic;
+  font-weight: 900;
   color: #ffffff;
-  letter-spacing: 2px;
-  margin: 0;
+  text-shadow: 3px 3px var(--hxh-green-bright), 6px 6px #052411;
+  margin-bottom: 20px;
 }
 
 .hxh-x {
-  color: var(--hxh-green);
+  color: var(--hxh-green-bright);
 }
 
-.hxh-hero p {
+.hxh-hero-sub {
+  font-size: 18px;
   color: var(--hxh-text-muted);
-  font-size: 1.05rem;
-  margin: 1rem 0 1.8rem;
+  margin-bottom: 30px;
   font-style: italic;
 }
+
+.hxh-hero-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   4. BUTTON STYLES
+========================================= */
 
 .hxh-btn {
   display: inline-block;
-  background-color: var(--hxh-green);
-  color: var(--hxh-bg-dark);
+  padding: 12px 28px;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: 700;
-  padding: 0.75rem 1.8rem;
-  border-radius: 4px;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-weight: 900;
+  transition: 0.3s;
 }
 
-.hxh-btn:hover {
-  background-color: #27ae60;
-  transform: translateY(-2px);
+.hxh-btn.primary {
+  background: var(--hxh-green-bright);
+  color: #070d0a;
 }
 
-/* --------------------------------------------------------------------------
-   3. Container & Card Sections
-   -------------------------------------------------------------------------- */
+.hxh-btn.primary:hover {
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+.hxh-btn.secondary {
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--hxh-green-bright);
+  border: 2px solid var(--hxh-green-bright);
+}
+
+.hxh-btn.secondary:hover {
+  background: var(--hxh-green-bright);
+  color: #070d0a;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   5. LAYOUT & CARD CONTAINERS
+========================================= */
+
 .hxh-container {
-  max-width: 950px;
+  padding: 60px 8%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
 }
 
 .hxh-card {
-  background-color: var(--hxh-bg-card);
-  border: 1px solid var(--hxh-border);
-  border-left: 4px solid var(--hxh-green);
-  border-radius: 6px;
-  padding: 2rem;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  background: var(--hxh-bg-card);
+  border: 2px solid var(--hxh-border);
+  border-left: 6px solid var(--hxh-green-bright);
+  border-radius: 18px;
+  padding: 40px;
+  margin-bottom: 50px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.hxh-card-header {
+  margin-bottom: 25px;
+}
+
+.hxh-card-header.text-center {
+  text-align: center;
+}
+
+.hxh-section-label {
+  color: var(--hxh-gold);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
 }
 
 .hxh-card-header h2 {
-  font-size: 1.7rem;
+  font-size: 32px;
   color: #ffffff;
-  margin: 0 0 0.2rem 0;
-}
-
-.hxh-tagline {
-  color: var(--hxh-gold);
   font-style: italic;
-  font-size: 0.9rem;
-  margin: 0 0 1.2rem 0;
 }
 
 .hxh-card-body p {
   color: var(--hxh-text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+  font-size: 17px;
+  margin-bottom: 18px;
 }
 
-.hxh-card-body p strong {
-  color: var(--hxh-green);
+.hxh-card-body p:last-child {
+  margin-bottom: 0;
 }
 
-/* --------------------------------------------------------------------------
-   4. Character Cards (Nen Colored Accents)
-   -------------------------------------------------------------------------- */
-.hxh-char-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 1.2rem;
-  margin-top: 1.5rem;
+.hxh-card-body strong {
+  color: var(--hxh-green-bright);
 }
 
-.hxh-char-card {
-  background-color: rgba(10, 14, 11, 0.7);
-  border: 1px solid var(--hxh-border);
-  border-radius: 6px;
-  padding: 1.2rem 1rem;
+.hxh-section-heading {
   text-align: center;
-  transition: transform 0.2s ease;
+  margin-bottom: 40px;
 }
 
-.hxh-char-card:hover {
-  transform: translateY(-5px);
-}
-
-.hxh-char-img-wrapper img {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 0.8rem;
-}
-
-/* Individual Nen Colors */
-.hxh-char-card.enhancer { border-top: 3px solid var(--nen-enhancer); }
-.hxh-char-card.enhancer img { border: 2px solid var(--nen-enhancer); }
-
-.hxh-char-card.transmuter { border-top: 3px solid var(--nen-transmuter); }
-.hxh-char-card.transmuter img { border: 2px solid var(--nen-transmuter); }
-
-.hxh-char-card.specialist { border-top: 3px solid var(--nen-specialist); }
-.hxh-char-card.specialist img { border: 2px solid var(--nen-specialist); }
-
-.hxh-char-card.emitter { border-top: 3px solid var(--nen-emitter); }
-.hxh-char-card.emitter img { border: 2px solid var(--nen-emitter); }
-
-.hxh-char-card h3 {
-  font-size: 1.05rem;
-  color: #ffffff;
-  margin: 0 0 0.3rem 0;
-}
-
-.hxh-nen-type {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
+.hxh-section-heading h2 {
+  font-size: 36px;
   text-transform: uppercase;
-  background-color: #1a261c;
-  color: var(--hxh-green);
-  padding: 0.2rem 0.5rem;
-  border-radius: 10px;
-  margin-bottom: 0.6rem;
+  font-style: italic;
+  color: #ffffff;
 }
 
-.hxh-char-card p {
-  font-size: 0.82rem;
+.hxh-section-heading h2 span {
+  color: var(--hxh-green-bright);
+}
+
+/* =========================================
+   6. CAROUSEL & SLIDER STRUCTURE
+========================================= */
+
+.hxh-carousel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 50px; /* Leave space for left/right arrows */
+}
+
+.hxh-carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.hxh-carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+}
+
+.hxh-carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/* Carousel Buttons */
+.hxh-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(7, 13, 10, 0.85);
+  color: var(--hxh-green-bright);
+  border: 2px solid var(--hxh-green-bright);
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hxh-carousel-btn:hover {
+  background: var(--hxh-green-bright);
+  color: #070d0a;
+  box-shadow: 0 0 15px var(--hxh-green-bright);
+}
+
+.hxh-carousel-btn.prev-btn {
+  left: 0;
+}
+
+.hxh-carousel-btn.next-btn {
+  right: 0;
+}
+
+/* Carousel Dot Indicators */
+.hxh-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hxh-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 255, 102, 0.25);
+  border: 1px solid var(--hxh-green-bright);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hxh-dot.active {
+  background: var(--hxh-green-bright);
+  box-shadow: 0 0 8px var(--hxh-green-bright);
+  transform: scale(1.2);
+}
+
+/* =========================================
+   7. CHARACTER DATA SHEET / PROFILE CARD
+========================================= */
+
+.hxh-profile-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: #0f1a14;
+  border: 3px solid var(--hxh-green-bright);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
+}
+
+.hxh-profile-details {
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.hxh-profile-title {
+  border-bottom: 2px solid var(--hxh-green-bright);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.hxh-jp-title {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--hxh-green-bright);
+  letter-spacing: 2px;
+}
+
+.hxh-profile-title h3 {
+  font-size: 28px;
+  color: #ffffff;
+  font-style: italic;
+}
+
+.hxh-stats-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.hxh-stats-list li {
+  font-size: 15px;
+  color: #e5f2ff;
+}
+
+.hxh-stats-list .stat-label {
+  font-weight: 900;
+  color: var(--hxh-gold);
+  letter-spacing: 1px;
+  margin-right: 6px;
+}
+
+/* Color Swatches */
+.hxh-palette-container {
+  border-top: 1px solid rgba(0, 255, 102, 0.2);
+  padding-top: 15px;
+}
+
+.hxh-palette-title {
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.hxh-palette-swatches {
+  display: flex;
+  gap: 18px;
+}
+
+.swatch-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.swatch-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: inline-block;
+}
+
+.swatch-name {
+  font-size: 11px;
   color: var(--hxh-text-muted);
-  margin: 0;
 }
 
-/* --------------------------------------------------------------------------
-   5. Media Archive Grid
-   -------------------------------------------------------------------------- */
+/* Character Portrait Media Area */
+.hxh-profile-media {
+  position: relative;
+  background: radial-gradient(circle at center, #182e20 0%, #08100a 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 350px;
+}
+
+.hxh-bg-watermark {
+  position: absolute;
+  font-size: 110px;
+  font-weight: 900;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.03);
+  user-select: none;
+  line-height: 0.8;
+  pointer-events: none;
+  text-align: center;
+}
+
+.hxh-character-portrait {
+  position: relative;
+  height: 100%;
+  max-height: 380px;
+  width: auto;
+  object-fit: contain;
+  z-index: 1;
+  filter: drop-shadow(-5px 5px 10px rgba(0, 0, 0, 0.6));
+}
+
+/* =========================================
+   8. MEDIA GRID
+========================================= */
+
 .hxh-media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .hxh-media-item {
-  margin: 0;
-  background-color: rgba(10, 14, 11, 0.7);
-  border: 1px solid var(--hxh-border);
-  border-radius: 6px;
+  background: #09120c;
+  border-radius: 12px;
   overflow: hidden;
+  border: 1px solid var(--hxh-border);
 }
 
 .hxh-media-item img {
   width: 100%;
-  height: 140px;
+  height: 180px;
   object-fit: cover;
-  display: block;
 }
 
 .hxh-media-item figcaption {
-  padding: 0.8rem;
-  font-size: 0.85rem;
-  color: var(--hxh-text-muted);
-  text-align: center;
+  padding: 15px;
 }
 
-/* --------------------------------------------------------------------------
-   6. Footer
-   -------------------------------------------------------------------------- */
+.hxh-media-item strong {
+  display: block;
+  color: var(--hxh-gold);
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.hxh-media-item span {
+  font-size: 13px;
+  color: var(--hxh-text-muted);
+}
+
+/* =========================================
+   9. FOOTER
+========================================= */
+
 .hxh-footer {
+  background: #030604;
+  border-top: 3px solid var(--hxh-green-bright);
+  padding: 40px 8%;
   text-align: center;
-  padding: 2.5rem 1rem;
-  background-color: #040604;
-  border-top: 1px solid var(--hxh-border);
-  color: var(--hxh-text-muted);
-  font-size: 0.85rem;
 }
 
-/* Responsive view */
-@media (max-width: 650px) {
+.hxh-footer-title {
+  font-size: 22px;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--hxh-green-bright);
+  margin-bottom: 8px;
+}
+
+.hxh-footer-content p {
+  color: var(--hxh-text-muted);
+  font-size: 13px;
+}
+
+/* =========================================
+   10. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 850px) {
   .hxh-nav {
+    padding: 15px 5%;
+  }
+
+  .hxh-nav-links {
+    gap: 15px;
+    font-size: 13px;
+  }
+
+  .hxh-carousel-wrapper {
+    padding: 0 20px;
+  }
+
+  .hxh-profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hxh-profile-media {
+    min-height: 280px;
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .hxh-nav {
+    position: relative;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 12px;
   }
-  .hxh-hero h1 {
-    font-size: 2.1rem;
-  }
+
   .hxh-container {
-    padding: 1.5rem 1rem;
+    padding: 40px 4%;
+  }
+
+  .hxh-profile-details {
+    padding: 20px;
   }
 }
