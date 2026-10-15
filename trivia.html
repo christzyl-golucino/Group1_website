@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonic Trivia Challenge</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      padding: 30px 15px;
+    }
+
+    header {
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 8px;
+      text-shadow: 3px 3px #003b9a;
+    }
+
+    .subtitle {
+      font-size: 17px;
+    }
+
+    .quiz-box {
+      background: white;
+      color: #222;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px #003b9a66;
+    }
+
+    .ring {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    #question {
+      font-size: 23px;
+      margin-bottom: 22px;
+    }
+
+    #answers {
+      display: grid;
+      gap: 12px;
+    }
+
+    button {
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      transition: 0.2s;
+    }
+
+    .answer {
+      background: #eaf3ff;
+      color: #0645ad;
+      border: 2px solid #c6ddff;
+    }
+
+    .answer:hover:not(:disabled) {
+      background: #cce4ff;
+      transform: scale(1.02);
+    }
+
+    .answer:disabled {
+      cursor: default;
+      opacity: 1;
+    }
+
+    .correct {
+      background: #b7f7c1 !important;
+      color: #075d20 !important;
+      border-color: #27ae60 !important;
+    }
+
+    .wrong {
+      background: #ffc7c7 !important;
+      color: #8b0000 !important;
+      border-color: #e74c3c !important;
+    }
+
+    #feedback {
+      min-height: 28px;
+      font-weight: bold;
+      margin: 18px 0;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 20px 0;
+      font-weight: bold;
+      color: #0645ad;
+    }
+
+    #next, #restart {
+      background: #ffcc00;
+      color: #222;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    #next:hover, #restart:hover {
+      background: #ffdf57;
+    }
+
+    #result {
+      display: none;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .quiz-box {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="ring">💍</div>
+    <h1>SONIC TRIVIA</h1>
+    <p class="subtitle">Gotta go fast! Test your Sonic knowledge!</p>
+  </header>
+
+  <main class="quiz-box">
+    <section id="quiz">
+      <div class="info">
+        <span id="progress">Question 1/10</span>
+        <span id="score">Score: 0</span>
+      </div>
+
+      <h2 id="question"></h2>
+      <div id="answers"></div>
+      <p id="feedback" aria-live="polite"></p>
+      <button id="next" hidden>Next Question ➜</button>
+    </section>
+
+    <section id="result">
+      <div class="ring">🏆</div>
+      <h2>Trivia Complete!</h2>
+      <h3 id="final-score"></h3>
+      <p id="message"></p>
+      <button id="restart">Play Again 🔄</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Unofficial Sonic fan-made trivia game.</p>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        question: "1. What is Sonic famous for?",
+        answers: ["Flying planes", "Super speed", "Building robots", "Swimming"],
+        correct: 1
+      },
+      {
+        question: "2. What color is Sonic?",
+        answers: ["Red", "Green", "Blue", "Yellow"],
+        correct: 2
+      },
+      {
+        question: "3. Who is Sonic's two-tailed fox friend?",
+        answers: ["Knuckles", "Shadow", "Silver", "Tails"],
+        correct: 3
+      },
+      {
+        question: "4. Who is Sonic's main enemy?",
+        answers: ["Dr. Eggman", "Vector", "Big", "Espio"],
+        correct: 0
+      },
+      {
+        question: "5. What does Sonic collect in his games?",
+        answers: ["Diamonds", "Golden rings", "Coins only", "Stars only"],
+        correct: 1
+      },
+      {
+        question: "6. What animal is Knuckles?",
+        answers: ["Fox", "Cat", "Echidna", "Hedgehog"],
+        correct: 2
+      },
+      {
+        question: "7. What is Shadow's main color scheme?",
+        answers: ["Blue and green", "Black and red", "Pink and yellow", "White and orange"],
+        correct: 1
+      },
+      {
+        question: "8. What is the name of Sonic's pink hedgehog friend?",
+        answers: ["Amy Rose", "Rouge", "Cream", "Blaze"],
+        correct: 0
+      },
+      {
+        question: "9. What is Dr. Eggman's other commonly used name?",
+        answers: ["Dr. Robot", "Dr. Star", "Dr. Ivo Robotnik", "Dr. Metal"],
+        correct: 2
+      },
+      {
+        question: "10. What is Sonic's species?",
+        answers: ["Fox", "Hedgehog", "Wolf", "Echidna"],
+        correct: 1
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+
+    const questionEl = document.getElementById("question");
+    const answersEl = document.getElementById("answers");
+    const feedbackEl = document.getElementById("feedback");
+    const nextBtn = document.getElementById("next");
+
+    function showQuestion() {
+      answered = false;
+
+      const q = questions[currentQuestion];
+
+      document.getElementById("progress").textContent =
+        `Question ${currentQuestion + 1}/${questions.length}`;
+
+      document.getElementById("score").textContent =
+        `Score: ${score}`;
+
+      questionEl.textContent = q.question;
+      answersEl.innerHTML = "";
+      feedbackEl.textContent = "";
+      nextBtn.hidden = true;
+
+      q.answers.forEach((answer, index) => {
+        const button = document.createElement("button");
+        button.className = "answer";
+        button.textContent = answer;
+
+        button.addEventListener("click", () => {
+          checkAnswer(index, button);
+        });
+
+        answersEl.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selected, selectedButton) {
+      if (answered) return;
+      answered = true;
+
+      const q = questions[currentQuestion];
+      const buttons = answersEl.querySelectorAll("button");
+
+      buttons.forEach((button, index) => {
+        button.disabled = true;
+
+        if (index === q.correct) {
+          button.classList.add("correct");
+        }
+      });
+
+      if (selected === q.correct) {
+        score++;
+        feedbackEl.textContent = "✅ Correct! You're super fast!";
+        feedbackEl.style.color = "#16803c";
+      } else {
+        selectedButton.classList.add("wrong");
+        feedbackEl.textContent =
+          "❌ Not quite! The correct answer is " +
+          q.answers[q.correct] + ".";
+        feedbackEl.style.color = "#d93025";
+      }
+
+      document.getElementById("score").textContent =
+        `Score: ${score}`;
+
+      nextBtn.textContent =
+        currentQuestion === questions.length - 1
+          ? "See Results 🏆"
+          : "Next Question ➜";
+
+      nextBtn.hidden = false;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        showResults();
+      }
+    });
+
+    function showResults() {
+      document.getElementById("quiz").style.display = "none";
+      document.getElementById("result").style.display = "block";
+
+      document.getElementById("final-score").textContent =
+        `You scored ${score} out of ${questions.length}!`;
+
+      let message;
+
+      if (score === 10) {
+        message = "Amazing! You're a true Sonic master! 💙";
+      } else if (score >= 7) {
+        message = "Great job! You're a Sonic expert! ⚡";
+      } else if (score >= 4) {
+        message = "Nice try! Keep practicing, speedster!";
+      } else {
+        message = "Time to power up your Sonic knowledge!";
+      }
+
+      document.getElementById("message").textContent = message;
+    }
+
+    document.getElementById("restart").addEventListener("click", () => {
+      currentQuestion = 0;
+      score = 0;
+
+      document.getElementById("quiz").style.display = "block";
+      document.getElementById("result").style.display = "none";
+
+      showQuestion();
+    });
+
+    showQuestion();
+  </script>
+</body>
+</html>
