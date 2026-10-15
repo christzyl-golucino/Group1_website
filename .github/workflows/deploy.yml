@@ -48,4 +48,4 @@ jobs:
           sftp_only: true
           local_path: "./*"
           remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/"
-          sftp_args: "-o ConnectTimeout=30"
+          sftpArgs: "-o ConnectTimeout=30"
