@@ -47,5 +47,5 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           sftp_only: true
           local_path: "./*"
-          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org/"
+          remote_path: "/home/lsu-source-fandemic/htdocs/fandemic.lsu-source.org"
           sftpArgs: "-o ConnectTimeout=30"
