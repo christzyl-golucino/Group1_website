@@ -1,168 +1,246 @@
-document.addEventListener('DOMContentLoaded', () => {
-  
-  /* =========================================================
-     1. CAROUSEL ENGINE
-     ========================================================= */
-  const track = document.getElementById('carouselTrack');
+/* =========================================
+   1. CHARACTER CAROUSEL
+========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("carouselTrack");
   const slides = Array.from(track.children);
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const dotsContainer = document.getElementById('dotsContainer');
-  
-  let currentIndex = 0;
-  const totalSlides = slides.length;
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+  const dotsContainer = document.getElementById("carouselDots");
 
-  // Create Dot Indicators dynamically
+  let currentIndex = 0;
+  const slideCount = slides.length;
+
+  // Generate dot navigation
   slides.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.classList.add('fr-dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(index));
+    const dot = document.createElement("button");
+    dot.classList.add("hxh-dot");
+    if (index === 0) dot.classList.add("active");
+    dot.setAttribute("aria-label", `Slide ${index + 1}`);
+    dot.addEventListener("click", () => {
+      goToSlide(index);
+      resetAutoSlide();
+    });
     dotsContainer.appendChild(dot);
   });
 
   const dots = Array.from(dotsContainer.children);
 
-  function updateCarousel() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentIndex);
-    });
-  }
-
+  // Move carousel
   function goToSlide(index) {
-    currentIndex = index;
-    updateCarousel();
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel();
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-  }
-
-  nextBtn.addEventListener('click', nextSlide);
-  prevBtn.addEventListener('click', prevSlide);
-
-  // Touch / Swipe support for Mobile Devices
-  let startX = 0;
-  let endX = 0;
-
-  track.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  track.addEventListener('touchend', (e) => {
-    endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) nextSlide();
-    if (endX - startX > 50) prevSlide();
-  });
-
-  /* =========================================================
-     2. RANDOM QUOTE GENERATOR
-     ========================================================= */
-  const quotes = [
-    { text: "Welcome to the real world. It sucks. You're gonna love it!", author: "Monica Geller" },
-    { text: "How you doin'?", author: "Joey Tribbiani" },
-    { text: "Could this BE any more iconic?", author: "Chandler Bing" },
-    { text: "They don't know that we know they know we know.", author: "Phoebe Buffay" },
-    { text: "WE WERE ON A BREAK!", author: "Ross Geller" },
-    { text: "Ah, humor based on my pain. Ah, good one.", author: "Rachel Green" },
-    { text: "I'm not great at the advice. Can I interest you in a sarcastic comment?", author: "Chandler Bing" },
-    { text: "Joey doesn't share food!", author: "Joey Tribbiani" },
-    { text: "She's your lobster. C'mon, you guys, it's a known fact that lobsters fall in love and mate for life.", author: "Phoebe Buffay" }
-  ];
-
-  const quoteText = document.getElementById('quoteText');
-  const quoteAuthor = document.getElementById('quoteAuthor');
-  const quoteBtn = document.getElementById('quoteBtn');
-
-  quoteBtn.addEventListener('click', () => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    quoteText.textContent = `"${quotes[randomIndex].text}"`;
-    quoteAuthor.textContent = `— ${quotes[randomIndex].author}`;
-  });
-
-  /* =========================================================
-     3. TRIVIA QUIZ ENGINE
-     ========================================================= */
-  const triviaData = [
-    {
-      question: "What is the name of Joey's bedtime penguin plushie?",
-      options: ["Pengu", "Hugsy", "Waddles", "Snowy"],
-      answer: 1
-    },
-    {
-      question: "What color is the iconic apartment door in Monica's apartment?",
-      options: ["Blue", "Red", "Purple", "Yellow"],
-      answer: 2
-    },
-    {
-      question: "How many times was Ross Geller legally married?",
-      options: ["2 times", "3 times", "4 times", "1 time"],
-      answer: 1
-    },
-    {
-      question: "What instrument does Phoebe Buffay play?",
-      options: ["Guitar", "Piano", "Ukulele", "Violin"],
-      answer: 0
-    }
-  ];
-
-  let currentQuizIndex = 0;
-  const quizQuestion = document.getElementById('quizQuestion');
-  const quizOptions = document.getElementById('quizOptions');
-  const quizFeedback = document.getElementById('quizFeedback');
-  const nextQuizBtn = document.getElementById('nextQuizBtn');
-
-  function loadQuestion() {
-    quizFeedback.textContent = '';
-    nextQuizBtn.style.display = 'none';
-    quizOptions.innerHTML = '';
-
-    const currentData = triviaData[currentQuizIndex];
-    quizQuestion.textContent = currentData.question;
-
-    currentData.options.forEach((optionText, idx) => {
-      const btn = document.createElement('button');
-      btn.classList.add('fr-quiz-btn');
-      btn.textContent = optionText;
-      btn.addEventListener('click', () => selectAnswer(idx, currentData.answer));
-      quizOptions.appendChild(btn);
-    });
-  }
-
-  function selectAnswer(selectedIdx, correctIdx) {
-    const optionButtons = quizOptions.querySelectorAll('.fr-quiz-btn');
-    optionButtons.forEach((btn, idx) => {
-      btn.disabled = true;
-      if (idx === correctIdx) {
-        btn.classList.add('correct');
-      } else if (idx === selectedIdx) {
-        btn.classList.add('incorrect');
-      }
-    });
-
-    if (selectedIdx === correctIdx) {
-      quizFeedback.textContent = "✨ Correct! Could you BE any smarter?";
-      quizFeedback.style.color = "#00ff66";
+    if (index < 0) {
+      currentIndex = slideCount - 1;
+    } else if (index >= slideCount) {
+      currentIndex = 0;
     } else {
-      quizFeedback.textContent = "❌ Wrong answer! Time to re-watch the show!";
-      quizFeedback.style.color = "#ff3838";
+      currentIndex = index;
     }
 
-    nextQuizBtn.style.display = 'inline-block';
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle("active", idx === currentIndex);
+    });
   }
 
-  nextQuizBtn.addEventListener('click', () => {
-    currentQuizIndex = (currentQuizIndex + 1) % triviaData.length;
-    loadQuestion();
+  // Prev / Next buttons
+  nextBtn.addEventListener("click", () => {
+    goToSlide(currentIndex + 1);
+    resetAutoSlide();
   });
 
-  // Initialize Trivia Game
-  loadQuestion();
+  prevBtn.addEventListener("click", () => {
+    goToSlide(currentIndex - 1);
+    resetAutoSlide();
+  });
+
+  // Keyboard arrows (ignored while the trivia exam is on screen)
+  document.addEventListener("keydown", (e) => {
+    const quiz = document.getElementById("htQuiz");
+    if (quiz && quiz.classList.contains("ht-active")) return;
+
+    if (e.key === "ArrowRight") {
+      goToSlide(currentIndex + 1);
+      resetAutoSlide();
+    } else if (e.key === "ArrowLeft") {
+      goToSlide(currentIndex - 1);
+      resetAutoSlide();
+    }
+  });
+
+  // Auto-rotation every 6 seconds
+  let autoSlideTimer = setInterval(() => {
+    goToSlide(currentIndex + 1);
+  }, 6000);
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 6000);
+  }
 });
+
+/* =========================================
+   2. HUNTER × HUNTER TRIVIA
+   Wrapped in an IIFE so it can't clash with the carousel code.
+========================================= */
+(function () {
+  const ROUND_SIZE = 10;
+  const STORE_KEY = "hxhTriviaBest";
+
+  const QUESTIONS = [
+    { q: "What is the name of Gon's father?", options: ["Ging Freecss", "Kite", "Isaac Netero", "Mito"], answer: 0 },
+    { q: "Which Nen type is Gon?", options: ["Transmuter", "Enhancer", "Emitter", "Conjurer"], answer: 1 },
+    { q: "Which Nen type is Killua?", options: ["Manipulator", "Specialist", "Transmuter", "Enhancer"], answer: 2 },
+    { q: "Which Nen type is Leorio?", options: ["Conjurer", "Emitter", "Enhancer", "Specialist"], answer: 1 },
+    { q: "What is the name of Kurapika's clan?", options: ["Zoldyck", "Kurta", "Freecss", "Paradinight"], answer: 1 },
+    { q: "Who is the leader of the Phantom Troupe?", options: ["Hisoka", "Uvogin", "Chrollo Lucilfer", "Feitan"], answer: 2 },
+    { q: "What is Hisoka's signature Nen ability called?", options: ["Bungee Gum", "Jajanken", "Dowsing Chain", "Godspeed"], answer: 0 },
+    { q: "What is Killua's family name?", options: ["Zoldyck", "Lucilfer", "Morow", "Netero"], answer: 0 },
+    { q: "What is Gon's signature attack called?", options: ["Thunderbolt", "Rock", "Jajanken", "Nen Beam"], answer: 2 },
+    { q: "Who was the chairman of the Hunter Association during the early arcs?", options: ["Pariston Hill", "Isaac Netero", "Cheadle Yorkshire", "Ging Freecss"], answer: 1 },
+    { q: "Which island does Gon leave to take the Hunter Exam?", options: ["Whale Island", "Greed Island", "Dark Continent", "Kakin"], answer: 0 },
+    { q: "Which Nen technique completely seals off a user's aura?", options: ["Ten", "Zetsu", "Ren", "Hatsu"], answer: 1 }
+  ];
+
+  const $ = (id) => document.getElementById(id);
+  if (!$("trivia")) return; // section missing on this page
+
+  const screens = { start: $("htStart"), quiz: $("htQuiz"), result: $("htResult") };
+  const optionsEl = $("htOptions");
+  const nextBtn = $("htNextBtn");
+
+  let order = [], index = 0, score = 0, answered = false, missed = [];
+
+  const shuffle = (arr) => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+
+  const show = (name) => {
+    Object.values(screens).forEach((s) => s.classList.remove("ht-active"));
+    screens[name].classList.add("ht-active");
+  };
+
+  const getBest = () => {
+    try { return localStorage.getItem(STORE_KEY); } catch (e) { return null; }
+  };
+  const setBest = (v) => {
+    try { localStorage.setItem(STORE_KEY, String(v)); } catch (e) { /* storage unavailable */ }
+  };
+  const renderBest = () => {
+    const b = getBest();
+    $("htBest").textContent = b !== null ? "BEST SCORE: " + b + "/" + ROUND_SIZE : "";
+  };
+
+  function start() {
+    // Pick a random set of questions and shuffle each question's options
+    order = shuffle(QUESTIONS).slice(0, ROUND_SIZE).map((item) => {
+      const correctText = item.options[item.answer];
+      const options = shuffle(item.options);
+      return { q: item.q, options: options, answer: options.indexOf(correctText) };
+    });
+    index = 0;
+    score = 0;
+    missed = [];
+    show("quiz");
+    render();
+  }
+
+  function render() {
+    const item = order[index];
+    answered = false;
+    $("htQuestion").textContent = item.q;
+    $("htCounter").textContent = "QUESTION " + (index + 1) + " / " + order.length;
+    $("htScore").textContent = score;
+    $("htProgress").style.width = (index / order.length) * 100 + "%";
+    $("htFeedback").textContent = "";
+    $("htFeedback").className = "ht-feedback";
+    nextBtn.hidden = true;
+    nextBtn.textContent = index === order.length - 1 ? "See Results" : "Next Question";
+
+    optionsEl.innerHTML = "";
+    item.options.forEach((text, i) => {
+      const btn = document.createElement("button");
+      btn.className = "ht-option";
+      btn.textContent = text;
+      btn.addEventListener("click", () => choose(i, btn));
+      optionsEl.appendChild(btn);
+    });
+  }
+
+  function choose(choice, btn) {
+    if (answered) return;
+    answered = true;
+    const item = order[index];
+    const buttons = Array.from(optionsEl.children);
+    buttons.forEach((b) => (b.disabled = true));
+    buttons[item.answer].classList.add("ht-correct");
+    const fb = $("htFeedback");
+
+    if (choice === item.answer) {
+      score++;
+      $("htScore").textContent = score;
+      fb.textContent = "✔ Correct!";
+      fb.classList.add("ht-good");
+    } else {
+      btn.classList.add("ht-wrong");
+      fb.textContent = "✘ Wrong. The answer is \"" + item.options[item.answer] + "\".";
+      fb.classList.add("ht-bad");
+      missed.push({ q: item.q, correct: item.options[item.answer] });
+    }
+    nextBtn.hidden = false;
+  }
+
+  function rank(s, total) {
+    const pct = (s / total) * 100;
+    if (pct === 100) return ["Chairman Level", "A perfect score. Netero would be proud."];
+    if (pct >= 80) return ["Hunter License Granted", "You passed the exam with flying colors."];
+    if (pct >= 60) return ["Exam Survivor", "You made it through, but the final round was close."];
+    if (pct >= 40) return ["Rookie Hunter", "You've got potential. Keep training your Nen."];
+    return ["Failed the Exam", "Back to Whale Island. Rewatch and try again!"];
+  }
+
+  function finish() {
+    $("htProgress").style.width = "100%";
+    const total = order.length;
+    const r = rank(score, total);
+    $("htRank").textContent = r[0];
+    $("htMessage").textContent = r[1];
+    $("htFinal").textContent = score;
+    $("htTotal").textContent = "/" + total;
+
+    const prev = getBest();
+    if (prev === null || score > Number(prev)) setBest(score);
+    renderBest();
+
+    const missEl = $("htMisses");
+    missEl.innerHTML = "";
+    missed.forEach((m) => {
+      const div = document.createElement("div");
+      div.className = "ht-miss";
+      const strong = document.createElement("strong");
+      strong.textContent = m.q;
+      const span = document.createElement("span");
+      span.textContent = "Correct answer: " + m.correct;
+      div.append(strong, span);
+      missEl.appendChild(div);
+    });
+    show("result");
+  }
+
+  $("htStartBtn").addEventListener("click", start);
+  $("htRetryBtn").addEventListener("click", start);
+  nextBtn.addEventListener("click", () => {
+    index++;
+    if (index >= order.length) finish();
+    else render();
+  });
+
+  renderBest();
+})();
